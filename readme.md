@@ -1,15 +1,23 @@
+# Kitematic
+https://blog.csdn.net/HeatDeath/article/details/80243746
+https://github.com/docker/kitematic/releases
+
+
+# VirtualBox
+https://blog.csdn.net/wang5990302/article/details/80282322
+
+
 # DockerToolbox
 https://www.cnblogs.com/linjj/p/5606687.html
 https://mirrors.aliyun.com/docker-toolbox/windows/docker-toolbox/
-
 https://github.com/boot2docker/boot2docker/releases
 
-- docker machine, client, compose, virtual box, kitematic
+- docker engine, machine, swarm, compose, cloud, kitematic
+- docker hub, data center
 
 - Quickstart terminal
 - docker images
-
-- docker run -itd --name test1 --network bridge --ip 192.168.56.102 hello-world
+- docker run --ip 192.168.56.102 hello-world
 - docker run docker/whalesay cowsay boo
 
 

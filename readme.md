@@ -1,3 +1,33 @@
+# ************* Ubuntu *************
+# Docker
+https://yq.aliyun.com/articles/625340
+https://www.cnblogs.com/huangaojiao/p/9159772.html
+https://blog.csdn.net/whan8080/article/details/80150970
+
+which curl
+sudo apt-get update
+sudo apt-get install curl
+
+sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo apt-key fingerprint 0EBFCD88
+
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu  xenial  stable"
+
+sudo apt-get update
+sudo apt-get -y install docker-ce
+
+
+sudo snap install docker
+
+
+sudo docker version
+sudo docker run hello-world
+
+sudo docker run -it ubuntu bash
+
+
+# ************* Win10 *************
 # Kitematic
 https://blog.csdn.net/HeatDeath/article/details/80243746
 https://github.com/docker/kitematic/releases

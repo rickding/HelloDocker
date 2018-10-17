@@ -1,15 +1,3 @@
-# openface
-http://cmusatyalab.github.io/openface/
-https://github.com/cmusatyalab/openface
-
-sudo docker pull bamos/openface
-sudo docker run -p 9000:9000 -p 8000:8000 -t -i bamos/openface /bin/bash
-cd /root/openface
-./demos/compare.py images/examples/{lennon*,clapton*}
-./demos/classifier.py infer models/openface/celeb-classifier.nn4.small2.v1.pkl ./images/examples/carell.jpg
-./demos/web/start-servers.sh
-
-
 # ************* Ubuntu *************
 # Docker
 https://yq.aliyun.com/articles/625340
@@ -43,6 +31,7 @@ sudo docker run docker/whalesay cowsay boo
 
 
 # Dockerfile:
+https://www.cnblogs.com/dazhoushuoceshi/p/7066041.html
 https://www.cnblogs.com/lighten/p/6900556.html
 https://www.cnblogs.com/linjj/p/5606911.html
 

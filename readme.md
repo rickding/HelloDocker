@@ -1,3 +1,12 @@
+# JDK
+https://blog.csdn.net/qq_29695701/article/details/77454395
+
+
+# VPN
+https://yq.aliyun.com/articles/625340
+https://github.com/getlantern/forum
+
+
 # ************* Ubuntu *************
 # Docker
 https://yq.aliyun.com/articles/625340

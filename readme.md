@@ -1,3 +1,15 @@
+# openface
+http://cmusatyalab.github.io/openface/
+https://github.com/cmusatyalab/openface
+
+sudo docker pull bamos/openface
+sudo docker run -p 9000:9000 -p 8000:8000 -t -i bamos/openface /bin/bash
+cd /root/openface
+./demos/compare.py images/examples/{lennon*,clapton*}
+./demos/classifier.py infer models/openface/celeb-classifier.nn4.small2.v1.pkl ./images/examples/carell.jpg
+./demos/web/start-servers.sh
+
+
 # ************* Ubuntu *************
 # Docker
 https://yq.aliyun.com/articles/625340
@@ -21,10 +33,30 @@ sudo apt-get -y install docker-ce
 sudo snap install docker
 
 
+# Images
 sudo docker version
-sudo docker run hello-world
+sudo docker images
 
+sudo docker run hello-world
 sudo docker run -it ubuntu bash
+sudo docker run docker/whalesay cowsay boo
+
+
+# Dockerfile:
+https://www.cnblogs.com/lighten/p/6900556.html
+https://www.cnblogs.com/linjj/p/5606911.html
+
+- cd HelloDocker
+- mkdir dockerfile && cd dockerfile
+- touch Dockerfile && vim Dockerfile
+
+FROM docker/whalesay:latest
+RUN apt-get -y update && apt-get install -y fortunes
+CMD /usr/games/fortune -a | cowsay
+
+- docker build -t docker-whale .
+- docker images
+- docker run docker-whale
 
 
 # ************* Win10 *************
@@ -52,13 +84,15 @@ https://github.com/boot2docker/boot2docker/releases
 
 
 # Dockerfile:
+https://www.cnblogs.com/linjj/p/5606911.html
+
 - cd Desktop
 - mkdir testdocker && cd testdocker
 - touch Dockerfile &&notepad Dockerfile
 
 FROM docker/whalesay:latest
 RUN apt-get -y update && apt-get install -y fortunes
-CMD /user/games/forture -a | cowsay
+CMD /usr/games/fortune -a | cowsay
 
 - docker build -t docker-whale .
 - docker run docker-whale

@@ -2,7 +2,9 @@
 # ps -e | egrep '(docker)'
 # kill
 
+clear
 docker -v
+
 docker container prune
 docker container ls
 

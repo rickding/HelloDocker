@@ -15,3 +15,4 @@ docker port mysql
 docker ps
 
 # docker exec -it mysql bash
+# docker logs mysql

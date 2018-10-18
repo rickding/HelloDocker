@@ -14,29 +14,29 @@ https://www.cnblogs.com/huangaojiao/p/9159772.html
 https://blog.csdn.net/whan8080/article/details/80150970
 
 which curl
-sudo apt-get update
-sudo apt-get install curl
+apt-get update
+apt-get install curl
 
-sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-sudo apt-key fingerprint 0EBFCD88
+apt-get install apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
+apt-key fingerprint 0EBFCD88
 
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu  xenial  stable"
+add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu  xenial  stable"
 
-sudo apt-get update
-sudo apt-get -y install docker-ce
+apt-get update
+apt-get -y install docker-ce
 
 
-sudo snap install docker
+snap install docker
 
 
 # Images
-sudo docker version
-sudo docker images
+docker version
+docker images
 
-sudo docker run hello-world
-sudo docker run -it ubuntu bash
-sudo docker run docker/whalesay cowsay boo
+docker run hello-world
+docker run -it ubuntu bash
+docker run docker/whalesay cowsay boo
 
 
 # Dockerfile:

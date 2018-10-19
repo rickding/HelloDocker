@@ -1,0 +1,3 @@
+FROM node:8
+
+EXPOSE 8010

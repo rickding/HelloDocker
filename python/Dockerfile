@@ -6,6 +6,7 @@ WORKDIR /usr/src/app
 COPY requirements.txt ./
 # RUN pip install --no-cache-dir -r requirements.txt
 
+# pip source https://blog.csdn.net/gzhouc/article/details/65448350
 RUN pip install -i http://pypi.douban.com/simple --trusted-host pypi.douban.com --no-cache-dir -r requirements.txt
 
 # copy files

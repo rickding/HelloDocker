@@ -1,8 +1,10 @@
 FROM python:3
 
+# copy files
 ADD . /code
 WORKDIR /code
 
-RUN pip install -i http://pypi.douban.com/simple --trusted-host pypi.douban.com -r requirements.txt
+# install
+RUN ./pip_install.sh
 
 CMD ["python", "app.py"]

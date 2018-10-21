@@ -15,7 +15,7 @@ docker stop hello-world
 docker rm hello-world
 
 docker run hello-world
-docker run -it ubuntu bash
+# docker run --rm -it ubuntu bash
 
 docker port hello-world
 docker ps

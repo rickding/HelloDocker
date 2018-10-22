@@ -2,12 +2,12 @@ version: "3"
 services:
   node:
     image: "node:8"
+    build: .
     user: "node"
     working_dir: /home/node/app
+    command: "npm start"
+
     environment:
       - NODE_ENV=production
-    volumes:
-      - ./:/home/node/app
     expose:
       - "8010"
-    command: "npm start"

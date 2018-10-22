@@ -3,6 +3,7 @@
 # kill
 
 clear
+docker-compose -v
 docker -v
 
 docker container prune

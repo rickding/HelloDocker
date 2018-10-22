@@ -12,4 +12,25 @@ docker-compose up
 http://127.0.0.1:5000/
 
 # cmds
-docker-compose stop, rm, start, restart, up, logs, down
+docker-compose build
+docker-compose config
+
+docker-compose images
+docker-compose rm
+
+docker-compose stop
+docker-compose start
+docker-compose restart
+
+docker-compose up
+docker-compose down
+docker-compose ps
+docker-compose kill
+
+docker-compose top
+docker-compose port
+
+docker-compose scale
+docker-compose run
+docker-compose exec
+docker-compose logs

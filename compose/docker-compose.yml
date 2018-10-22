@@ -3,6 +3,8 @@ services:
     web:
         image: "hello_compose"
         build: .
+        restart: always
+        privileged: true
 
         ports:
             - "5000:5000"

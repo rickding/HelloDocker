@@ -1,1 +1,6 @@
 nohup.out
+.idea
+*.sql
+*.pyc
+*.sqlite3
+nohup.out

@@ -1,7 +1,14 @@
 version: '3'
 services:
+    db: 
+        image: "mysql:5"
+
     web:
         image: "django_in_docker"
         build: .
+        command: "python manage.py runserver 0.0.0.0:8000"
+
         ports:
             - "8000:8000"
+        links: 
+            - db

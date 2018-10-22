@@ -10,3 +10,6 @@ docker-compose up
 
 # server
 http://127.0.0.1:5000/
+
+# cmds
+docker-compose stop, rm, start, restart, up, logs, down

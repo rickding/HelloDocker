@@ -5,4 +5,4 @@ from django.http import HttpResponse
 
 
 def chk(req):
-    return HttpResponse('ok, %s, %s, %s' % (req.get_raw_uri(), req.get_full_path(), req.get_host()))
+    return HttpResponse('ok, django in docker, %s, %s, %s' % (req.get_raw_uri(), req.get_full_path(), req.get_host()))

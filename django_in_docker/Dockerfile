@@ -10,5 +10,4 @@ WORKDIR /django_in_docker/
 RUN ./pip_install.sh
 
 
-# service
-CMD ["python", "manage.py", "runserver", "8000"]
+# do sth

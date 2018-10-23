@@ -6,6 +6,12 @@ pip install -i http://pypi.douban.com/simple --trusted-host pypi.douban.com dock
 alias cmps=docker-compose
 
 
+# Ubuntu owner and user group
+ls -la /home/data
+cat /etc/group
+chown -R 999 /home/data
+
+
 # Docker
 https://yq.aliyun.com/articles/625340
 https://www.cnblogs.com/huangaojiao/p/9159772.html

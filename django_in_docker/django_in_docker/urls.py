@@ -16,10 +16,11 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
-from app.views import chk
+from app.views import chk, db
 
 urlpatterns = [
     url(r'^$', chk, name='chk'),
     url(r'chk', chk, name='chk'),
+    url(r'db', db, name='db'),
     url(r'^admin/', admin.site.urls),
 ]

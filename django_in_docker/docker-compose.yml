@@ -2,15 +2,26 @@ version: '3'
 services:
     db: 
         image: "mysql:5"
+        command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --init-connect='SET NAMES utf8mb4;' --innodb-flush-log-at-trx-commit=0 --default-authentication-plugin=mysql_native_password
+
+        restart: always
+        privileged: true
+
+        expose:
+            - "3306"
+        environment:
+            - MYSQL_DATABASE: django_in_docker
+            - MYSQL_ROOT_PASSWORD: root
 
     web:
         image: "django_in_docker"
         build: .
+        command: "python manage.py runserver 0.0.0.0:8000"
+
         restart: always
         privileged: true
-        command: "python manage.py runserver 0.0.0.0:8000"
 
         ports:
             - "8000:8000"
-        links: 
+        depends_on:
             - db

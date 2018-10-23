@@ -13,3 +13,7 @@ apt-get -y install mysql-server mysql-client libmysqlclient-dev  mytop
 
 # django with nginx
 https://www.jianshu.com/p/5f689e186aa5
+
+# createsuperuser.sh
+admin/superuser
+root/superuser

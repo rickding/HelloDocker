@@ -6,8 +6,8 @@ services:
 
         restart: always
         volumes:
-            - ~/data:/var/lib/mysql:rw
-            - ~/conf:/etc/mysql/conf.d
+            - ./data:/var/lib/mysql:rw
+            - ./conf:/etc/mysql/conf.d
             - ./initdb:/docker-entrypoint-initdb.d
 
         ports:

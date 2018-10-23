@@ -81,7 +81,7 @@ DATABASES = {
         'NAME': 'django_in_docker',
         'USER': 'root',
         'PASSWORD': 'root',
-        'HOST': '127.0.0.1',
+        'HOST': '192.168.1.153',
     }
 }
 

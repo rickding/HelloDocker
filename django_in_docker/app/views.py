@@ -11,6 +11,9 @@ def chk(req):
 
 
 def db(req):
-    count = len(Log.objects.all())
+    obj_list = Log.objects.all()
+    count = 0 if obj_list is None else len(obj_list)
+
     Log.objects.create(ops='db: %d' % count)
-    return HttpResponse('db, log: %d' % count + 1)
+
+    return HttpResponse('db, log: %d' % count)

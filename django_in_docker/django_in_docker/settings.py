@@ -78,10 +78,10 @@ DATABASES = {
     # }
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'django_in_docker',
+        'NAME': 'did',
         'USER': 'root',
         'PASSWORD': 'root',
-        'HOST': '192.168.1.153',
+        'HOST': 'db',
     }
 }
 

@@ -7,7 +7,7 @@ from .models import Log
 
 
 def chk(req):
-    return HttpResponse('ok, django 3 in docker, %s, %s, %s' % (req.get_raw_uri(), req.get_full_path(), req.get_host()))
+    return HttpResponse('ok, django in docker, %s, %s, %s' % (req.get_raw_uri(), req.get_full_path(), req.get_host()))
 
 
 def db(req):

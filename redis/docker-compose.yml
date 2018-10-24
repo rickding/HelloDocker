@@ -1,0 +1,12 @@
+version: '3'
+services:
+    cache:
+        image: redis:4
+        command: redis-server --appendonly yes
+
+        restart: always
+        volumes:
+            - ./data:/data
+
+        ports:
+            - 6379:6379

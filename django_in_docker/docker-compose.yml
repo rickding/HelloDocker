@@ -15,7 +15,7 @@ services:
     web:
         image: django_in_docker
         build: .
-        command: ./migrate.sh
+        command: ./launch.sh
         restart: always
 
         ports:

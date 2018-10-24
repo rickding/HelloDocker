@@ -7,7 +7,7 @@ definer_user=mysql.sys
 definer_host=localhost
 suid=0
 with_check_option=0
-timestamp=2018-10-23 08:31:56
+timestamp=2018-10-24 05:34:39
 create-version=1
 source=SELECT TABLE_SCHEMA, TABLE_NAME, INDEX_NAME, MAX(NON_UNIQUE) AS non_unique, MAX(IF(SUB_PART IS NULL, 0, 1)) AS subpart_exists, GROUP_CONCAT(COLUMN_NAME ORDER BY SEQ_IN_INDEX) AS index_columns FROM INFORMATION_SCHEMA.STATISTICS WHERE INDEX_TYPE=\'BTREE\' AND TABLE_SCHEMA NOT IN (\'mysql\', \'sys\', \'INFORMATION_SCHEMA\', \'PERFORMANCE_SCHEMA\') GROUP BY TABLE_SCHEMA, TABLE_NAME, INDEX_NAME
 client_cs_name=utf8

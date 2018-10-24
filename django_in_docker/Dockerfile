@@ -8,4 +8,6 @@ WORKDIR /django_in_docker/
 RUN ./pip_install.sh
 
 # do sth
-CMD ["./migrate.sh"]
+CMD ["./launch.sh"]
+
+EXPOSE 8000

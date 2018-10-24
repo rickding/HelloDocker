@@ -1,7 +1,7 @@
 #!/bin/bash
 clear
 
-docker-compose down
+./down.sh
 
 # compose
 docker-compose up -d

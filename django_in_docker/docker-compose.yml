@@ -6,9 +6,9 @@ services:
 
         restart: always
         volumes:
-            - ./data:/var/lib/mysql
-            - ./conf:/etc/mysql/conf.d
-            - ./initdb:/docker-entrypoint-initdb.d
+            - ../mysql/data:/var/lib/mysql
+            - ../mysql/conf:/etc/mysql/conf.d
+            - ../mysql/initdb:/docker-entrypoint-initdb.d
 
         expose:
             - 3306

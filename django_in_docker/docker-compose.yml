@@ -5,10 +5,10 @@ services:
         command: --default-authentication-plugin=mysql_native_password
 
         restart: always
-#        volumes:
-#            - ./data:/var/lib/mysql
-#            - ./conf:/etc/mysql/conf.d
-#            - ./initdb:/docker-entrypoint-initdb.d
+        volumes:
+            - ./data:/var/lib/mysql
+            - ./conf:/etc/mysql/conf.d
+            - ./initdb:/docker-entrypoint-initdb.d
 
         expose:
             - 3306

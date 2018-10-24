@@ -1,13 +1,18 @@
 version: "3"
 services:
-  node:
-    image: "node:8"
-    build: .
-    user: "node"
-    working_dir: /home/node/app
-    command: "npm start"
+    web:
+        image: "node:8"
+        build: .
+        user: "node"
+        command: "npm start"
 
-    environment:
-      - NODE_ENV=production
-    expose:
-      - "8010"
+        restart: always
+        working_dir: /home/node/app
+
+        volumes:
+            - ./:/home/node/app
+
+        ports:
+            - "8010:8010"
+        environment:
+            - NODE_ENV=production

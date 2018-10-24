@@ -2,5 +2,3 @@
 clear
 
 docker-compose build
-
-./up.sh

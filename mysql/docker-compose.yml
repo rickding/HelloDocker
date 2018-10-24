@@ -6,7 +6,7 @@ services:
 
         restart: always
         volumes:
-            - ./data:/var/lib/mysql:rw
+            - ./data:/var/lib/mysql
             - ./conf:/etc/mysql/conf.d
             - ./initdb:/docker-entrypoint-initdb.d
 

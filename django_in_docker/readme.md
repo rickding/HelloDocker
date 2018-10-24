@@ -22,3 +22,7 @@ root/superuser
 chown -R 999 ./data/
 chown -R 999 ./conf/
 chown -R 999 ./initdb/
+
+docker exec -it django_in_docker_db_1 bash
+ls -la /var/lib/mysql  # mysql
+cat /etc/group  # 999

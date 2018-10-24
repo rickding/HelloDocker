@@ -121,3 +121,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# logging config
+logging.basicConfig(
+    level=logging.INFO,
+    format='[%(asctime)s] %(levelname)s [%(filename)s: %(lineno)d, %(funcName)s] %(message)s',
+    datefmt='%Y-%m-%d %H:%M:%S'
+)

@@ -17,3 +17,8 @@ https://www.jianshu.com/p/5f689e186aa5
 # createsuperuser.sh
 admin/superuser
 root/superuser
+
+# set owner as mysql
+chown -R 999 ./data/
+chown -R 999 ./conf/
+chown -R 999 ./initdb/

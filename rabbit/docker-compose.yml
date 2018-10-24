@@ -1,0 +1,21 @@
+version: '3'
+services:
+    mq:
+        image: rabbitmq:3
+        hostname: rabbit
+        restart: always
+
+        ports:
+            - 5672:5672
+        environment:
+            RABBITMQ_ERLANG_COOKIE: rabbit_cookie
+
+    mq_mgr:
+        image: rabbitmq:3-management
+        hostname: rabbit
+        restart: always
+
+        ports:
+            - 15672:15672
+        depends_on:
+            - mq

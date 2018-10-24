@@ -4,7 +4,7 @@ services:
         image: "node:8"
         build: .
         user: "node"
-        command: "npm start"
+        command: "node hello.js"
 
         restart: always
         working_dir: /home/node/app

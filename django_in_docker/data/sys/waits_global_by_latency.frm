@@ -7,7 +7,7 @@ definer_user=mysql.sys
 definer_host=localhost
 suid=0
 with_check_option=0
-timestamp=2018-10-23 08:31:57
+timestamp=2018-10-24 05:34:40
 create-version=1
 source=SELECT event_name AS event, count_star AS total, sys.format_time(sum_timer_wait) AS total_latency, sys.format_time(avg_timer_wait) AS avg_latency, sys.format_time(max_timer_wait) AS max_latency FROM performance_schema.events_waits_summary_global_by_event_name WHERE event_name != \'idle\' AND sum_timer_wait > 0 ORDER BY sum_timer_wait DESC
 client_cs_name=utf8

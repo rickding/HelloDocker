@@ -9,5 +9,5 @@ docker run --name rabbit -p 5672:5672 -d --hostname rabbit -e RABBITMQ_ERLANG_CO
 docker port rabbit
 docker ps
 
-# docker exec -it rabbit bash
+# docker exec -it rabbit bash -c "rabbitmqctl list_users"
 # docker logs rabbit

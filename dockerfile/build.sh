@@ -7,7 +7,6 @@ docker rm docker-whale
 # build image
 docker build -t docker-whale .
 
-
 # run image
 docker run --rm --name docker-whale docker-whale
 

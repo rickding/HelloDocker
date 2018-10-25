@@ -1,15 +1,18 @@
 version: '3'
 services:
+    cache:
+        image: "redis:4"
+        restart: always
+
+        expose:
+            - 6379
+
     web:
         image: "hello_compose"
         build: .
         restart: always
-        privileged: true
 
         ports:
             - "5000:5000"
-        links:
-            - redis
-
-    redis:
-        image: "redis:4"
+        depends_on:
+            - cache

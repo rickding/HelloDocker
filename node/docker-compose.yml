@@ -8,7 +8,6 @@ services:
 
         restart: always
         working_dir: /home/node/app
-
         volumes:
             - ./:/home/node/app
 

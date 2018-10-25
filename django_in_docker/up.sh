@@ -1,8 +1,7 @@
 #!/bin/bash
 clear
 
-# ./build.sh
-
+./build.sh
 ./down.sh
 
 # compose

@@ -5,7 +5,7 @@ docker stop python-app
 docker rm python-app
 
 # build image
-# docker build -t python-app .
+docker build -t python-app .
 
 # run image
 docker run --rm --name python-app python-app

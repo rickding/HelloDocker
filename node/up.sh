@@ -2,7 +2,6 @@
 clear
 
 ./build.sh
-
 ./down.sh
 
 # compose

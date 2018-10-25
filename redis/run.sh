@@ -13,5 +13,5 @@ docker run --name redis -p 6379:6379 -v $DATA_PATH/data:/data -d redis:4 redis-s
 docker port redis
 docker ps
 
-# docker exec -it redis bash
+# docker exec -it redis bash -c "redis-cli -h redis -p 6379"
 # docker logs redis

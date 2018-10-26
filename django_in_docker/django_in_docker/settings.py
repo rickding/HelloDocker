@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
+import logging
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -81,8 +82,8 @@ DATABASES = {
         'NAME': 'did',
         'USER': 'root',
         'PASSWORD': 'root',
-        'HOST': 'db',
-        # 'HOST': '127.0.0.1',
+        # 'HOST': 'db',
+        'HOST': '127.0.0.1',
     }
 }
 

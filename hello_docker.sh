@@ -3,9 +3,10 @@
 # kill
 
 clear
-docker-compose -v
-docker -v
+alias cmps=docker-compose
+cmps -v
 
+docker -v
 docker container prune
 docker container ls
 
@@ -15,7 +16,7 @@ docker images
 docker stop hello-world
 docker rm hello-world
 
-docker run hello-world
+docker run --rm hello-world
 # docker run --rm -it ubuntu bash
 
 docker port hello-world

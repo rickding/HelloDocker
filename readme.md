@@ -17,10 +17,6 @@ https://yq.aliyun.com/articles/625340
 https://www.cnblogs.com/huangaojiao/p/9159772.html
 https://blog.csdn.net/whan8080/article/details/80150970
 
-which curl
-apt-get update
-apt-get install curl
-
 apt-get install apt-transport-https ca-certificates curl software-properties-common
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
 apt-key fingerprint 0EBFCD88

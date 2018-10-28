@@ -16,8 +16,8 @@ chown -R 999 /data/work/HelloDocker/mysql/data
 https://blog.csdn.net/qq_28218253/article/details/81068595?utm_source=blogxgwz1
 ln -s /usr/local/mysql/bin/mysql_config /usr/local/bin/mysql_config
 
-https://blog.csdn.net/wylycool/article/details/80243266
-apt-get -y install mysql-server mysql-client libmysqlclient-dev  mytop
+https://blog.csdn.net/wylycool/article/details/80243266 mysql-server
+apt-get -y install mysql-client libmysqlclient-dev mytop
 
 # mysql client
 https://www.cnblogs.com/zhuyp1015/p/3561470.html

@@ -13,7 +13,17 @@ def chk(req):
 def db(req):
     obj_list = Log.objects.all()
     count = 0 if obj_list is None else len(obj_list)
+    Log.objects.create(ops='db: {}'.format(count))
+    return HttpResponse('db, log: {}'.format(count + 1))
 
-    Log.objects.create(ops='db: %d' % count)
 
-    return HttpResponse('db, log: %d' % count)
+def cache(req):
+    return HttpResponse('cache, count: {}'.format('todo'))
+
+
+def mq(req):
+    return HttpResponse('mq, count: {}'.format('todo'))
+
+
+def task(req):
+    return HttpResponse('task, count: {}'.format('todo'))

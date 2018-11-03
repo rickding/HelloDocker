@@ -1,10 +1,8 @@
 FROM python:3
 
-WORKDIR /usr/src/app
-
 # copy files
-COPY . /root/
-WORKDIR /root/
+COPY . /root/python/
+WORKDIR /root/python/
 
 # install
 RUN ./pip_install.sh

@@ -1,15 +1,15 @@
 version: "3"
 services:
     web:
-        image: "node:8"
+        image: "node-app"
         build: .
         user: "node"
         command: "node hello.js"
 
         restart: always
-        working_dir: /home/node/app
+        working_dir: /usr/code/
         volumes:
-            - ./:/home/node/app
+            - ./:/usr/code/
 
         ports:
             - "8010:8010"

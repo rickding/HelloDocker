@@ -3,18 +3,34 @@ services:
     db:
         image: mysql:5
         command: --default-authentication-plugin=mysql_native_password
-
         restart: always
         volumes:
             - ../mysql/data:/var/lib/mysql
             - ../mysql/conf:/etc/mysql/conf.d
             - ../mysql/initdb:/docker-entrypoint-initdb.d
-
         expose:
             - 3306
         environment:
             MYSQL_DATABASE: did
             MYSQL_ROOT_PASSWORD: root
+
+    cache:
+        image: redis:4
+        command: redis-server --appendonly yes
+        restart: always
+        volumes:
+            - ../redis/data:/data
+        expose:
+            - 6379
+
+    mq:
+        image: rabbitmq:3
+        hostname: rabbit
+        restart: always
+        expose:
+            - 5672
+        environment:
+            RABBITMQ_ERLANG_COOKIE: rabbit_cookie
 
     web:
         image: django_in_docker
@@ -26,3 +42,5 @@ services:
             - 8000:8000
         depends_on:
             - db
+            - cache
+            - mq

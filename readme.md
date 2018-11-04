@@ -3,7 +3,7 @@ https://www.cnblogs.com/neptunemoon/p/6512121.html
 
 pip install -i http://pypi.douban.com/simple --trusted-host pypi.douban.com docker-compose
 
-alias cmps=docker-compose
+alias dcmp=docker-compose
 
 
 # Docker

@@ -3,8 +3,8 @@
 # kill
 
 clear
-alias cmps=docker-compose
-cmps -v
+alias dcmp=docker-compose
+dcmp -v
 
 docker -v
 docker container prune

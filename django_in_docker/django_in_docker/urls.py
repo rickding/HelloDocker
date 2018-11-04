@@ -16,13 +16,13 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
-from app.views import chk, db, cache, mq, task
+from app.views import chk, db, cache_chk, mq, task
 
 urlpatterns = [
     url(r'^$', chk, name='chk'),
     url(r'^chk', chk, name='chk'),
     url(r'^db', db, name='db'),
-    url(r'^cache', cache, name='cache'),
+    url(r'^cache', cache_chk, name='cache'),
     url(r'^mq', mq, name='mq'),
     url(r'^task', task, name='task'),
     url(r'^admin/', admin.site.urls),

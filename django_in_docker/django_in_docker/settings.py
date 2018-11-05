@@ -12,6 +12,17 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import logging
 import os
+import djcelery
+
+# https://blog.csdn.net/sinat_29699167/article/details/79688464
+djcelery.setup_loader()
+
+# RabbitMQ configurations for celery broker: https://blog.csdn.net/dipolar/article/details/22162863
+BROKER_HOST = 'mq'
+BROKER_PORT = 5672
+BROKER_USER = 'guest'
+BROKER_PASSWORD = 'guest'
+BROKER_VHOST = '/'
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -36,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'djcelery',
     'app',
 ]
 

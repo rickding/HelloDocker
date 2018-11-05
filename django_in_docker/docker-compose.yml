@@ -46,3 +46,16 @@ services:
             - db
             - cache
             - mq
+
+    task:
+        image: django_in_docker
+        build: .
+        command: ./celery.sh
+        restart: always
+        working_dir: /root/code
+        volumes:
+            - ./:/root/code
+        depends_on:
+            - db
+            - cache
+            - mq

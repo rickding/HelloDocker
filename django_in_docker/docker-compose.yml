@@ -37,7 +37,9 @@ services:
         build: .
         command: ./launch.sh
         restart: always
-
+        working_dir: /root/code
+        volumes:
+            - ./:/root/code
         ports:
             - 8000:8000
         depends_on:

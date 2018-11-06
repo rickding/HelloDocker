@@ -16,7 +16,7 @@ services:
             MYSQL_DATABASE: did
             MYSQL_ROOT_PASSWORD: root
 
-    adminer:
+    dba:
         image: adminer
         restart: always
         

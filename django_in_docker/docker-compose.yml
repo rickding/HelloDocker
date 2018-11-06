@@ -45,7 +45,7 @@ services:
             - cache
             - mq
 
-    task-viewer:
+    task_viewer:
         image: django_in_docker
         build: .
         command: ./celery_flower.sh

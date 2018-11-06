@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
+from __future__ import absolute_import
 
 from django.core.cache import cache
 from django.http import HttpResponse
@@ -15,6 +16,7 @@ def chk(req):
 def db(req):
     obj_list = Log.objects.all()
     count = 0 if obj_list is None else len(obj_list)
+
     Log.objects.create(ops='chk_db: {}'.format(count))
     return HttpResponse('db, log: {}'.format(count + 1))
 

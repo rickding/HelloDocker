@@ -14,11 +14,23 @@ import logging
 import os
 import djcelery
 
-# https://blog.csdn.net/sinat_29699167/article/details/79688464
+# Celery: https://blog.csdn.net/yeyingcai/article/details/78647553
 djcelery.setup_loader()
+CELERY_TIMEZONE = 'Asia/Shanghai'  # Same as TIME_ZONE
+CELERYBEAT_SCHEDULER = 'djcelery.schedulers.DatabaseScheduler'
+
+# https://blog.csdn.net/liyingke112/article/details/78389403
+CELERY_RESULT_BACKEND = 'redis://127.0.0.1:6379/9'
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+
+# Redis configuration for celery broker
+# BROKER_URL = 'redis://127.0.0.1:6379/8'
 
 # RabbitMQ configurations for celery broker: https://blog.csdn.net/dipolar/article/details/22162863
-BROKER_HOST = 'mq'
+# BROKER_HOST = 'mq'
+BROKER_HOST = '127.0.0.1'
 BROKER_PORT = 5672
 BROKER_USER = 'guest'
 BROKER_PASSWORD = 'guest'
@@ -94,16 +106,16 @@ DATABASES = {
         'NAME': 'did',
         'USER': 'root',
         'PASSWORD': 'root',
-        'HOST': 'db',
-        # 'HOST': '127.0.0.1',
+        # 'HOST': 'db',
+        'HOST': '127.0.0.1',
     }
 }
 
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://cache:6379",
-        # "LOCATION": "redis://127.0.0.1:6379",  # 这里设定了本机的redis数据
+        # "LOCATION": "redis://cache:6379",
+        "LOCATION": "redis://127.0.0.1:6379",  # 这里设定了本机的redis数据
         # "LOCATION": "redis://:passwordpassword@47.193.146.xxx:6379/0",
         #  如果redis设置密码的话，需要以这种格式host前面是密码
         "OPTIONS": {
@@ -135,7 +147,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 

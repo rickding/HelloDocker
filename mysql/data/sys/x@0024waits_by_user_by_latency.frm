@@ -7,7 +7,7 @@ definer_user=mysql.sys
 definer_host=localhost
 suid=0
 with_check_option=0
-timestamp=2018-10-24 05:34:40
+timestamp=2018-11-06 01:51:02
 create-version=1
 source=SELECT IF(user IS NULL, \'background\', user) AS user, event_name AS event, count_star AS total, sum_timer_wait AS total_latency, avg_timer_wait AS avg_latency, max_timer_wait AS max_latency FROM performance_schema.events_waits_summary_by_user_by_event_name WHERE event_name != \'idle\' AND user IS NOT NULL AND sum_timer_wait > 0 ORDER BY user, sum_timer_wait DESC
 client_cs_name=utf8

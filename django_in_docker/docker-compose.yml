@@ -32,6 +32,19 @@ services:
         environment:
             RABBITMQ_ERLANG_COOKIE: rabbit_cookie
 
+    task:
+        image: django_in_docker
+        build: .
+        command: ./celery.sh
+        restart: always
+        working_dir: /root/code
+        volumes:
+            - ./:/root/code
+        depends_on:
+            - db
+            - cache
+            - mq
+
     web:
         image: django_in_docker
         build: .
@@ -42,19 +55,6 @@ services:
             - ./:/root/code
         ports:
             - 8000:8000
-        depends_on:
-            - db
-            - cache
-            - mq
-
-    task:
-        image: django_in_docker
-        build: .
-        command: ./celery.sh
-        restart: always
-        working_dir: /root/code
-        volumes:
-            - ./:/root/code
         depends_on:
             - db
             - cache

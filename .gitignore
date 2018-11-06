@@ -9,6 +9,9 @@ tmp
 *.sqlite3
 *.sql
 nohup.out
+data/
+mysql/data
+redis/data
 
 # C extensions
 *.so

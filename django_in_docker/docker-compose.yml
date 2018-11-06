@@ -56,9 +56,7 @@ services:
         ports:
             - 5555:5555
         depends_on:
-            - db
-            - cache
-            - mq
+            - task
 
     web:
         image: django_in_docker

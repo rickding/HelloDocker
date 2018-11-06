@@ -16,6 +16,7 @@ import djcelery
 
 # Celery: https://blog.csdn.net/yeyingcai/article/details/78647553
 djcelery.setup_loader()
+
 CELERY_TIMEZONE = 'Asia/Shanghai'  # Same as TIME_ZONE
 CELERYBEAT_SCHEDULER = 'djcelery.schedulers.DatabaseScheduler'
 
@@ -30,13 +31,9 @@ CELERY_RESULT_SERIALIZER = 'json'
 # BROKER_URL = 'redis://cache:6379/8'
 # BROKER_URL = 'redis://127.0.0.1:6379/8'
 
-# RabbitMQ configurations for celery broker: https://blog.csdn.net/dipolar/article/details/22162863
-BROKER_HOST = 'mq'
-# BROKER_HOST = '127.0.0.1'
-BROKER_PORT = 5672
-BROKER_USER = 'guest'
-BROKER_PASSWORD = 'guest'
-BROKER_VHOST = '/'
+# RabbitMQ configuration: https://blog.csdn.net/sinat_29699167/article/details/79688464
+BROKER_URL= 'amqp://guest:guest@mq:5672/'
+# BROKER_URL= 'amqp://guest:guest@127.0.0.1:5672/'
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -161,6 +158,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Connection of Rabbit MQ
+RABBIT_MQ_SERVER = '127.0.0.1'
+RABBIT_MQ_PORT = 5672
+RABBIT_MQ_USER = 'guest'
+RABBIT_MQ_PWD = 'guest'
+
+# Queue of Rabbit MQ
+DEFAULT_EXCHANGE = 'DEFAULT_EXCHANGE'
+DEFAULT_QUEUE = 'DEFAULT_QUEUE'
 
 # logging config
 logging.basicConfig(

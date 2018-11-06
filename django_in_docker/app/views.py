@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.http import HttpResponse
 from django.core.cache import cache
+from django.http import HttpResponse
 
 from .models import Log
+from .tasks import add
 
 
 def chk(req):
@@ -20,12 +21,12 @@ def db(req):
 
 def cache_chk(req):
     key = 'chk_cache'
-    count = cache.get(key)
-    if count is None:
-        count = 0
+    value = cache.get(key)
+    if value is None:
+        value = 0
 
-    cache.set(key, count + 1)
-    return HttpResponse('cache, count: {}'.format(count + 1))
+    cache.set(key, value + 1)
+    return HttpResponse('cache, key: {}, value: {}'.format(key, value + 1))
 
 
 def mq(req):
@@ -33,4 +34,8 @@ def mq(req):
 
 
 def task(req):
-    return HttpResponse('task, count: {}'.format('todo'))
+    job = add.delay({'x': 3, 'y': 5})
+    ret = job.wait()
+    return HttpResponse('task, job: {}, result: {}'.format(job, ret))
+
+    # return HttpResponse('task, result: {}'.format(add({'x': 3, 'y': 5})))

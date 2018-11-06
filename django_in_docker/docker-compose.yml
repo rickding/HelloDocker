@@ -45,6 +45,21 @@ services:
             - cache
             - mq
 
+    task-viewer:
+        image: django_in_docker
+        build: .
+        command: ./celery_flower.sh
+        restart: always
+        working_dir: /root/code
+        volumes:
+            - ./:/root/code
+        ports:
+            - 5555:5555
+        depends_on:
+            - db
+            - cache
+            - mq
+
     web:
         image: django_in_docker
         build: .

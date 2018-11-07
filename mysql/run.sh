@@ -14,4 +14,4 @@ docker port mysql
 docker ps
 
 # docker exec -it mysql bash -c "mysql -uroot -proot"
-# docker logs mysql
+# docker logs mysql -f

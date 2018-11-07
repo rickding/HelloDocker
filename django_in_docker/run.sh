@@ -14,4 +14,4 @@ docker port django_in_docker
 docker ps
 
 # docker exec -it django_in_docker bash
-# docker logs django_in_docker
+# docker logs django_in_docker -f

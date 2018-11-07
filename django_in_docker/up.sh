@@ -5,9 +5,10 @@ clear
 ./down.sh
 
 # compose
-docker-compose up -d
+alias dcmp=docker-compose
+dcmp up -d
+dcmp ps
 
-docker-compose ps
-
+# dcmp logs -f
 # docker exec -it django_in_docker_db_1 bash -c "mysql -uroot -proot"
 # docker exec -it django_in_docker_web_1 bash

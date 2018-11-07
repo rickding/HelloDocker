@@ -14,4 +14,4 @@ docker port python-app
 docker ps
 
 # docker exec -it python-app bash
-# docker logs python-app
+# docker logs python-app -f

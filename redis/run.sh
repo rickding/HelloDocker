@@ -14,4 +14,4 @@ docker port redis
 docker ps
 
 # docker exec -it redis bash -c "redis-cli -h redis -p 6379"
-# docker logs redis
+# docker logs redis -f

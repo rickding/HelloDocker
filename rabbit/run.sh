@@ -10,4 +10,4 @@ docker port rabbit
 docker ps
 
 # docker exec -it rabbit bash -c "rabbitmqctl list_users"
-# docker logs rabbit
+# docker logs rabbit -f

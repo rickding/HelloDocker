@@ -5,8 +5,9 @@ clear
 ./down.sh
 
 # compose
-docker-compose up -d
+alias dcmp=docker-compose
+dcmp up -d
+dcmp ps
 
-docker-compose ps
-
+# dcmp logs -f
 # docker exec -it java_web_1 bash

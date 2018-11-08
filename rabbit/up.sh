@@ -4,9 +4,8 @@ clear
 ./down.sh
 
 # compose
-alias dcmp=docker-compose
-dcmp up -d
-dcmp ps
+docker-compose up -d
+docker-compose ps
 
-# dcmp logs -f
+# alias dcmp=docker-compose && dcmp logs -f
 # docker exec -it rabbit_mq_1 bash -c "rabbitmqctl list_users"

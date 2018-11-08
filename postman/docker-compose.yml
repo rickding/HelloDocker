@@ -1,0 +1,4 @@
+version: '3'
+services:
+    postman:
+        image: postman/newman

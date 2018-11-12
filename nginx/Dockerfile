@@ -1,5 +1,6 @@
 FROM nginx:stable
 
-COPY ./ /usr/share/nginx/html
+COPY ./web/ /usr/share/nginx/html
+COPY ./nginx.conf /etc/nginx/nginx.conf
 
 EXPOSE 80

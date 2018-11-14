@@ -9,4 +9,4 @@ docker-compose up -d
 docker-compose ps
 
 # alias dcmp=docker-compose && dcmp logs -f
-# docker exec -it ngnix_web_1 bash
+# docker exec -it nginx_web_1 bash

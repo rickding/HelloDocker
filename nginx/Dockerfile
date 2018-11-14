@@ -1,6 +1,9 @@
 FROM nginx:stable
 
+# web files
 COPY ./web/ /usr/share/nginx/html
-COPY ./nginx.conf /etc/nginx/nginx.conf
+
+# config
+COPY ./conf/ /etc/nginx
 
 EXPOSE 80

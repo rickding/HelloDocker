@@ -1,8 +1,17 @@
 version: "3"
 services:
-    web:
+    nginx:
         image: "nginx-srv"
         build: .
         restart: always
+        working_dir: /etc/nginx/
+        volumes:
+            - ./conf.d:/etc/nginx/conf.d.host
         ports:
             - "80:80"
+        networks:
+            - nginx
+
+networks:
+    nginx:
+        driver: bridge

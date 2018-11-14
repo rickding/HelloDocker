@@ -1,7 +1,7 @@
 #!/bin/bash
 clear
 
-# ./build.sh
+./build.sh
 ./down.sh
 
 # compose
@@ -9,4 +9,4 @@ docker-compose up -d --remove-orphans
 docker-compose ps
 
 # alias dcmp=docker-compose && dcmp logs -f
-# docker exec -it nginx_web_1 bash
+# docker exec -it nginx_nginx_1 bash

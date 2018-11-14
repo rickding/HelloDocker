@@ -11,7 +11,13 @@ services:
             - "80:80"
         networks:
             - nginx
+            - srv_srv
+            - client_client
 
 networks:
     nginx:
         driver: bridge
+    srv_srv:
+        external: true
+    client_client:
+        external: true

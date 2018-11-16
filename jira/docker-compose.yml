@@ -23,6 +23,8 @@ services:
         restart: always
         volumes:
             - ./data/confluence:/home
+            - ./data/opt:/opt/atlassian
+            - ./data/var:/var/atlassian
         ports:
             - 8080:8080
         networks:

@@ -14,11 +14,20 @@ services:
             MYSQL_ROOT_PASSWORD: root
             MYSQL_USER: jira
             MYSQL_PASSWORD: jira
+        networks:
+            - pmo
 
     jira:
-        image: cptactionhank/atlassian-jira-software:7.12.3
+        image: jira
+        build: .
         restart: always
         volumes:
             - ./data/confluence:/home
         ports:
             - 8080:8080
+        networks:
+            - pmo
+
+networks:
+    pmo:
+        driver: bridge

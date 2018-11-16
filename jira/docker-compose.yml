@@ -22,7 +22,6 @@ services:
         build: .
         restart: always
         volumes:
-            - ./data/confluence:/home
             - ./data/opt:/opt/atlassian
             - ./data/var:/var/atlassian
         ports:

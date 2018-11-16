@@ -1,3 +1,4 @@
 # data
 mysql for jira
-confluence
+opt for atlassian
+var for atlassian

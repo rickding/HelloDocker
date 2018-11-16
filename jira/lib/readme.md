@@ -1,1 +1,1 @@
-# /opt/atlassian/jira/atlassian-jira/WEB-INF/lib/
+/opt/atlassian/jira/atlassian-jira/WEB-INF/lib/

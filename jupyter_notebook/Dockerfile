@@ -1,7 +1,7 @@
 FROM jupyter/base-notebook
 
 # Copy conf file: set pwd: nb
-COPY ./conf /home/jovyan/.jupyter
+COPY ./env /home/jovyan/.jupyter
 WORKDIR /home/jovyan/.jupyter
 
 # Install

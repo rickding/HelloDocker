@@ -9,3 +9,4 @@ docker-compose ps
 
 # alias dcmp=docker-compose && dcmp logs -f
 docker exec -it jupyter_notebook_nb_1 bash -c "jupyter notebook list"
+# docker exec -it jupyter_notebook_nb_1 bash

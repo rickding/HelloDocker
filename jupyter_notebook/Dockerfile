@@ -1,6 +1,10 @@
-FROM jupyter/tensorflow-notebook
+FROM jupyter/base-notebook
 
 # Copy conf file: set pwd: nb
-COPY ./jupyter_notebook_config.py /home/jovyan/.jupyter
+COPY ./ /home/jovyan/.jupyter
+WORKDIR /home/jovyan/.jupyter
+
+# Install
+RUN ./pip_install.sh
 
 EXPOSE 8888

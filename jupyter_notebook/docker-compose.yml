@@ -1,7 +1,8 @@
 version: "3"
 services:
     nb:
-        image: "jupyter/tensorflow-notebook"
+        image: "nb"
+        build: .
         working_dir: /home/jovyan/work
         volumes:
             - ./code:/home/jovyan/work

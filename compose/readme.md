@@ -1,3 +1,11 @@
+# service, swarm, stack
+https://docs.docker.com/get-started/part3/
+
+docker stack ls
+docker stack deploy -c docker-compose.yml srv
+docker service ls
+docker service ps srv
+
 # compose
 https://www.cnblogs.com/senlinyang/p/8856975.html
 https://blog.csdn.net/pushiqiang/article/details/78682323

@@ -6,7 +6,11 @@ redis = Redis(host="cache", port=6379)
 
 @app.route("/")
 def hello():
-    count = redis.incr('hits')
+	try:
+    	count = redis.incr('hits')
+    except RedisError:
+    	count = 'Cannot connect to Redis.'
+
     return 'hello world from docker compose! {}'.format(count)
 
 if __name__ == "__main__":

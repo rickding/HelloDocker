@@ -1,19 +1,18 @@
-# Docker compose
-https://www.cnblogs.com/neptunemoon/p/6512121.html
-https://www.jianshu.com/p/2217cfed29d7
+# Docker doc and images
+https://docs.docker.com/
+http://hub.docker.com
+https://github.com/docker-library/docs
 
-pip install -i http://pypi.douban.com/simple --trusted-host pypi.douban.com docker-compose
-
-alias dcmp=docker-compose
+- Setup env
+- Containers: Build image and run a container
+- Services: Scale to run multiple containers
+- Swarms: Distribute across a cluster
+- Stacks: Stack service with a backend db
+- Deploy to production
 
 
 # Docker swarm, node, service
 https://www.cnblogs.com/franknihao/p/8490416.html
-
-
-# Docker images and doc
-https://github.com/docker-library/docs
-http://hub.docker.com
 
 
 # Accelerate
@@ -38,6 +37,15 @@ systemctl restart docker
 Set-NetConnectionProfile -interfacealias "vEthernet (DockerNAT)" -NetworkCategory Private
 
 
+# Docker compose
+https://www.cnblogs.com/neptunemoon/p/6512121.html
+https://www.jianshu.com/p/2217cfed29d7
+
+pip install -i http://pypi.douban.com/simple --trusted-host pypi.douban.com docker-compose
+
+alias dcmp=docker-compose
+
+
 # Docker
 https://yq.aliyun.com/articles/625340
 https://www.cnblogs.com/huangaojiao/p/9159772.html
@@ -57,10 +65,11 @@ apt-get -y install docker-ce
 snap install docker
 
 
-# Images
+# Images & containers
 docker version
 docker info
 docker images
+docker ps
 
 docker run hello-world
 docker run -it ubuntu bash

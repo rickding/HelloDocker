@@ -1,10 +1,13 @@
 # service, swarm, stack
 https://docs.docker.com/get-started/part3/
 
-docker stack ls
+docker swarm init
+docker swarm join --token SWMTKN-1-1vc0o3laoapznkeb4fustp1s1qtsl5ckfnpi1sfhomwhyhrxnh-ayokpnozz4qjy10chhfgju87w 192.168.65.3:2377
+
 docker stack deploy -c docker-compose.yml srv
+docker stack ls
 docker service ls
-docker service ps srv
+docker service ps srv_web
 
 # compose
 https://www.cnblogs.com/senlinyang/p/8856975.html

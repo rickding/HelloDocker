@@ -1,10 +1,15 @@
-#Docker compose
+# Docker compose
 https://www.cnblogs.com/neptunemoon/p/6512121.html
 https://www.jianshu.com/p/2217cfed29d7
 
 pip install -i http://pypi.douban.com/simple --trusted-host pypi.douban.com docker-compose
 
+docker info
 alias dcmp=docker-compose
+
+
+# Docker swarm, node, service
+https://www.cnblogs.com/franknihao/p/8490416.html
 
 
 # Docker

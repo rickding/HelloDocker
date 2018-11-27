@@ -4,12 +4,38 @@ https://www.jianshu.com/p/2217cfed29d7
 
 pip install -i http://pypi.douban.com/simple --trusted-host pypi.douban.com docker-compose
 
-docker info
 alias dcmp=docker-compose
 
 
 # Docker swarm, node, service
 https://www.cnblogs.com/franknihao/p/8490416.html
+
+
+# Docker images and doc
+https://github.com/docker-library/docs
+http://hub.docker.com
+
+
+# Accelerate
+http://www.cnblogs.com/wushuaishuai/p/9984228.html
+
+mkdir -p /etc/docker
+sudo tee /etc/docker/daemon.json <<-'EOF'
+{
+  "registry-mirrors": ["http://hub-mirror.c.163.com"]
+}
+
+Or: vim /usr/lib/systemd/system/docker.service
+Add the sentence:
+ExecStart=/usr/bin/dockerd --registry-mirror=http://hub-mirror.c.163.com
+
+Restart docker:
+systemctl daemon-reload
+systemctl restart docker
+
+
+# docker for windows
+Set-NetConnectionProfile -interfacealias "vEthernet (DockerNAT)" -NetworkCategory Private
 
 
 # Docker
@@ -33,6 +59,7 @@ snap install docker
 
 # Images
 docker version
+docker info
 docker images
 
 docker run hello-world
@@ -56,11 +83,6 @@ CMD /usr/games/fortune -a | cowsay
 - docker build -t docker-whale .
 - docker images
 - docker run docker-whale
-
-
-# Docker images and doc
-https://github.com/docker-library/docs
-http://hub.docker.com
 
 
 # Ubuntu owner and user group

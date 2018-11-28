@@ -3,7 +3,11 @@ services:
     cache:
         image: "redis:4"
         restart: always
-
+        command: redis-server --appendonly yes
+        volumes:
+            - ./data:/data
+        deploy:
+            replicas: 1
         expose:
             - 6379
 
@@ -11,7 +15,8 @@ services:
         image: "hello_compose"
         build: .
         restart: always
-
+        deploy:
+            replicas: 1
         ports:
             - "5000:5000"
         depends_on:

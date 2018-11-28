@@ -12,6 +12,7 @@ nohup.out
 data/
 mysql/data
 redis/data
+*.war
 
 # C extensions
 *.so

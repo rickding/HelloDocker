@@ -17,6 +17,11 @@ docker service ls
 docker service ps srv_web
 
 docker ps
+docker inspect srv
+docker container ls -q
+
+# filter
+constraint: node.hostname == srv_web_1, node.role == manager
 
 # machine
 docker-machine create --driver virualbox vm1

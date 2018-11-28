@@ -1,15 +1,12 @@
 version: '3'
 services:
-    cache:
-        image: "redis:4"
-        restart: always
-        command: redis-server --appendonly yes
-        volumes:
-            - ./data:/data
+    doc:
+        image: docs/docker.github.io:latest
         deploy:
-            replicas: 1
-        expose:
-            - 6379
+            placement:
+                constraints: [node.role == manager]
+        ports:
+            - "4000:4000"
 
     viz:
         image: dockersamples/visualizer:stable
@@ -20,6 +17,17 @@ services:
                 constraints: [node.role == manager]
         ports:
             - "8080:8080"
+
+    cache:
+        image: "redis:4"
+        restart: always
+        command: redis-server --appendonly yes
+        volumes:
+            - ./data:/data
+        deploy:
+            replicas: 1
+        expose:
+            - 6379
 
     web:
         image: "hello_compose"

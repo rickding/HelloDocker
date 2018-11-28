@@ -11,6 +11,16 @@ services:
         expose:
             - 6379
 
+    viz:
+        image: dockersamples/visualizer:stable
+        volumes:
+            - "/var/run/docker.sock:/var/run/docker.sock"
+        deploy:
+            placement:
+                constraints: [node.role == manager]
+        ports:
+            - "8080:8080"
+
     web:
         image: "hello_compose"
         build: .

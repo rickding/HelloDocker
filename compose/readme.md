@@ -6,6 +6,9 @@ docker swarm join-token worker/manager
 docker swarm join --token SWMTKN-1-1vc0o3laoapznkeb4fustp1s1qtsl5ckfnpi1sfhomwhyhrxnh-ayokpnozz4qjy10chhfgju87w 192.168.65.3:2377
 docker swarm leave --force
 
+docker node ls
+docker node ps
+
 docker stack deploy -c docker-compose.yml srv
 docker stack ls
 docker stack rm srv
@@ -14,6 +17,20 @@ docker service ls
 docker service ps srv_web
 
 docker ps
+
+# machine
+docker-machine create --driver virualbox vm1
+docker-machine create --driver virualbox vm2
+
+docker-machine ls
+docker-machine start vm1
+
+docker-machine ssh vm1 "docker swarm init --advertise-addr <vm1 ip>"
+docker-machine ssh vm2 "docker swarm join --token <token> <ip>:2377"
+docker-machine ssh vm1 "docker node ls"
+
+docker-machine env vm1
+eval $(docker-machine env vm1)
 
 # compose
 https://www.cnblogs.com/senlinyang/p/8856975.html

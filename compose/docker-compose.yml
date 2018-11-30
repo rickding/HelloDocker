@@ -26,6 +26,8 @@ services:
             - ./data:/data
         deploy:
             replicas: 1
+            placement:
+                constraints: [node.labels.group == db]
         expose:
             - 6379
 
@@ -35,6 +37,8 @@ services:
         restart: always
         deploy:
             replicas: 1
+            placement:
+                constraints: [node.labels.group != db]
         ports:
             - "5000:5000"
         depends_on:

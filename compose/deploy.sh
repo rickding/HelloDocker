@@ -4,6 +4,7 @@
 
 # deploy
 docker stack deploy -c docker-compose.yml srv
+docker node ls
 docker stack ls
 docker service ls
 docker ps

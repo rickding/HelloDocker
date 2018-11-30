@@ -16,21 +16,21 @@ https://www.cnblogs.com/franknihao/p/8490416.html
 
 
 # Accelerate
-http://www.cnblogs.com/wushuaishuai/p/9984228.html
+https://blog.csdn.net/u012055638/article/details/79803959
+https://www.docker-cn.com/registry-mirror
+
+https://registry.docker-cn.com
+http://f1361db2.m.daocloud.io
+
+docker pull registry.docker-cn.com/library/python:3
 
 mkdir -p /etc/docker
 sudo tee /etc/docker/daemon.json <<-'EOF'
 {
-  "registry-mirrors": ["http://hub-mirror.c.163.com"]
+  "registry-mirrors": ["https://registry.docker-cn.com"]
 }
 
-Or: vim /usr/lib/systemd/system/docker.service
-Add the sentence:
-ExecStart=/usr/bin/dockerd --registry-mirror=http://hub-mirror.c.163.com
-
-Restart docker:
-systemctl daemon-reload
-systemctl restart docker
+service docker restart
 
 
 # docker for windows

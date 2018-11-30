@@ -2,9 +2,13 @@
 https://docs.docker.com/get-started/part3/
 
 docker swarm init
-docker swarm join-token worker/manager
-docker swarm join --token SWMTKN-1-1vc0o3laoapznkeb4fustp1s1qtsl5ckfnpi1sfhomwhyhrxnh-ayokpnozz4qjy10chhfgju87w 192.168.65.3:2377
+docker swarm join-token manager/worker
 docker swarm leave --force
+
+docker swarm join --token SWMTKN-1-1vc0o3laoapznkeb4fustp1s1qtsl5ckfnpi1sfhomwhyhrxnh-ayokpnozz4qjy10chhfgju87w 192.168.65.3:2377
+
+docker swarm join --token SWMTKN-1-2plozud3pnf71zw5qmbsczqxuws1fvg5s6a6v7ff775zt0l2et-33shh191vioave3f8n8ac6q8t 192.168.1.157:2377
+docker swarm join --token SWMTKN-1-2plozud3pnf71zw5qmbsczqxuws1fvg5s6a6v7ff775zt0l2et-1rxsv7uxnnzuqgtvlpin2ol1m 192.168.1.157:2377
 
 docker node ls
 docker node ps

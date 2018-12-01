@@ -20,9 +20,6 @@ https://blog.csdn.net/u012055638/article/details/79803959
 https://www.docker-cn.com/registry-mirror
 
 https://registry.docker-cn.com
-http://f1361db2.m.daocloud.io
-
-docker pull registry.docker-cn.com/library/python:3
 
 mkdir -p /etc/docker
 sudo tee /etc/docker/daemon.json <<-'EOF'

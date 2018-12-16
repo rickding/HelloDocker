@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# ./build.sh
+
 # img:tag repo:tag namespace server
 set compose:latest compose:latest hellodock registry.cn-shanghai.aliyuncs.com
 

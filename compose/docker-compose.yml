@@ -32,7 +32,7 @@ services:
             - 6379
 
     web:
-        image: "hello_compose"
+        image: "compose:latest"
         build: .
         restart: always
         deploy:

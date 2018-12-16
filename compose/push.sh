@@ -1,8 +1,13 @@
 #!/bin/bash
 
-docker login --username=xxx registry.cn-shanghai.aliyuncs.com
+# img:tag repo:tag namespace server
+set compose:latest compose:latest hellodock registry.cn-shanghai.aliyuncs.com
 
-docker tag ac089f3e69b0 registry.cn-shanghai.aliyuncs.com/ddsrv/api:181216R1
-docker push registry.cn-shanghai.aliyuncs.com/ddsrv/api:181216R1
+# workaround on windows: prefix command with winpty
+# docker login --username=xxx $4
 
-docker pull registry.cn-shanghai.aliyuncs.com/ddsrv/api:181216R1
+docker tag $1 $4/$3/$2
+docker push $4/$3/$2
+
+# docker rmi $4/$3/$2
+# docker pull $4/$3/$2

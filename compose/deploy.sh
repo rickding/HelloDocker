@@ -1,6 +1,8 @@
 #!/bin/bash
 
 # ./build.sh
+# ./push.sh
+# ./rm.sh
 
 # deploy
 docker stack deploy -c docker-compose.yml srv

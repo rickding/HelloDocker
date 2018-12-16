@@ -32,8 +32,9 @@ docker node update --label-add group=db u2 # node.labels.group==db
 # filter
 constraint:
 node.role == manager
-node.hostname == web_1
 node.labels.group == db
+node.labels.group == task
+node.hostname == web_1
 
 # machine
 docker-machine create --driver virualbox vm1

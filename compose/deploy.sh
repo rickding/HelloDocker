@@ -10,6 +10,7 @@
 # docker swarm leave --force
 # docker swarm join --token xxx
 
+# node.labels.group==db
 # docker node update --label-add group=db u2
 # docker node inspect u2 --pretty
 

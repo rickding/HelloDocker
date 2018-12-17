@@ -4,8 +4,12 @@
 # ./push.sh
 # ./rm.sh
 
+# docker node update --label-add group=db u2
+# docker node inspect u2 --pretty
+
 # deploy
-docker stack deploy -c docker-compose.yml srv
+docker stack deploy -c deploy-compose.yml srv
+
 docker node ls
 docker stack ls
 docker service ls

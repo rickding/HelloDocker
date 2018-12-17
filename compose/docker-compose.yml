@@ -3,17 +3,17 @@ services:
     doc:
         image: docs/docker.github.io:latest
         ports:
-            - "4000:4000"
+            - 4000:4000
 
     viz:
         image: dockersamples/visualizer:stable
         volumes:
-            - "/var/run/docker.sock:/var/run/docker.sock"
+            - /var/run/docker.sock:/var/run/docker.sock
         ports:
-            - "8080:8080"
+            - 8080:8080
 
     cache:
-        image: "redis:4"
+        image: redis:4
         restart: always
         command: redis-server --appendonly yes
         volumes:
@@ -22,10 +22,10 @@ services:
             - 6379
 
     web:
-        image: "compose:latest"
+        image: compose:latest
         build: .
         restart: always
         ports:
-            - "5000:5000"
+            - 5000:5000
         depends_on:
             - cache

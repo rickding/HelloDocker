@@ -6,20 +6,20 @@ services:
             placement:
                 constraints: [node.role == manager]
         ports:
-            - "4000:4000"
+            - 4000:4000
 
     viz:
         image: dockersamples/visualizer:stable
         volumes:
-            - "/var/run/docker.sock:/var/run/docker.sock"
+            - /var/run/docker.sock:/var/run/docker.sock
         deploy:
             placement:
                 constraints: [node.role == manager]
         ports:
-            - "8080:8080"
+            - 8080:8080
 
     cache:
-        image: "redis:4"
+        image: redis:4
         command: redis-server --appendonly yes
         volumes:
             - ./data:/data
@@ -29,12 +29,12 @@ services:
                 constraints: [node.labels.group == db]
 
     web:
-        image: "registry.cn-shanghai.aliyuncs.com/hellodock/compose:latest"
+        image: registry.cn-shanghai.aliyuncs.com/hellodock/compose:latest
         deploy:
             replicas: 1
             placement:
                 constraints: [node.labels.group == db]
         ports:
-            - "5000:5000"
+            - 5000:5000
         depends_on:
             - cache

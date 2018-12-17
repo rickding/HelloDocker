@@ -18,7 +18,7 @@ docker service ls
 docker service ps srv_web
 
 docker ps
-docker inspect srv
+docker inspect srv_cache
 docker container ls -q
 
 # node

@@ -2,7 +2,13 @@
 
 # ./build.sh
 # ./push.sh
+
+# ./pull.sh
 # ./rm.sh
+
+# docker swarm init
+# docker swarm leave --force
+# docker swarm join --token xxx
 
 # docker node update --label-add group=db u2
 # docker node inspect u2 --pretty

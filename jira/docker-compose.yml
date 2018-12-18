@@ -1,34 +1,48 @@
-version: "3"
+version: '3'
 services:
-    mysql:
-        image: mysql:5
-        command: --default-authentication-plugin=mysql_native_password
-        restart: always
-        volumes:
-            - ./data/mysql:/var/lib/mysql
-            - ./initdb:/docker-entrypoint-initdb.d
-        expose:
-            - 3306
-        environment:
-            MYSQL_DATABASE: jira
-            MYSQL_ROOT_PASSWORD: root
-            MYSQL_USER: jira
-            MYSQL_PASSWORD: jira
-        networks:
-            - pmo
+  jira_mysql:
+    image: "idoall/mysql:5.7"
+    hostname: jira_mysql
+    ports:
+      - "20032:3306"
+    volumes:
+      - ./conf/my.ini:/etc/mysql/my.cnf
+    networks:
+      - jira
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
+      - MYSQL_DATABASE=jira
+      - MYSQL_USER=jira
+      - MYSQL_PASSWORD=jira_mshk
+      - character-set-server=utf8
+      - collation-server=utf8_bin
+    deploy:
+      replicas: 1
+      update_config:
+        delay: 1s
+      restart_policy:
+        condition: on-failure
 
-    jira:
-        image: jira
-        build: .
-        restart: always
-        volumes:
-            - ./data/opt:/opt/atlassian
-            - ./data/var:/var/atlassian
-        ports:
-            - 8080:8080
-        networks:
-            - pmo
+  jira-software:
+    image: "idoall/ubuntu16.04-jira-software:7.12.3"
+    hostname: jira
+#    volumes:
+#      - ./data/opt:/opt/atlassian
+#      - ./data/var:/var/atlassian
+    ports:
+      - "20030:8080"
+      - "20031:8005"
+    networks:
+      - jira
+    depends_on:
+      - jira_mysql
+    deploy:
+      replicas: 1
+      update_config:
+        delay: 1s
+      restart_policy:
+        condition: on-failure
 
 networks:
-    pmo:
-        driver: bridge
+  jira:
+    driver: overlay

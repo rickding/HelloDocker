@@ -6,7 +6,9 @@ services:
     ports:
       - "20032:3306"
     volumes:
+      - ./data/mysql:/var/lib/mysql
       - ./conf/my.ini:/etc/mysql/my.cnf
+      - ./initdb:/docker-entrypoint-initdb.d
     networks:
       - jira
     environment:

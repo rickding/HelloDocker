@@ -9,8 +9,8 @@ docker exec -it mysql_db_1 bash
 ls -la /var/lib/mysql  # mysql
 cat /etc/group  # 999
 
-ls -la /data/work/HelloDocker/mysql/data
-chown -R 999 /data/work/HelloDocker/mysql/data
+ls -la ./data
+chown -R 999 ./data
 
 # pip install mysqlclient error:
 https://blog.csdn.net/qq_28218253/article/details/81068595?utm_source=blogxgwz1

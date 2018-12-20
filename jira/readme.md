@@ -12,6 +12,12 @@ service jira start
 
 docker exec jira_jira-software_1 sh -c 'service jira stop;mv /opt/atlassian/jira/atlassian-jira/WEB-INF/lib/atlassian-extras-3.2.jar /opt/atlassian/jira/atlassian-jira/WEB-INF/lib/atlassian-extras-3.2.jar.bak;cp /usr/src/_jira/atlassian-extras-3.2.jar /opt/atlassian/jira/atlassian-jira/WEB-INF/lib/atlassian-extras-3.2.jar;mv /opt/atlassian/jira/atlassian-jira/WEB-INF/atlassian-bundled-plugins/atlassian-universal-plugin-manager-plugin-2.22.9.jar /opt/atlassian/jira/atlassian-jira/WEB-INF/atlassian-bundled-plugins/atlassian-universal-plugin-manager-plugin-2.22.9.jar.bak;cp /usr/src/_jira/atlassian-universal-plugin-manager-plugin-2.22.9.jar /opt/atlassian/jira/atlassian-jira/WEB-INF/atlassian-bundled-plugins/atlassian-universal-plugin-manager-plugin-2.22.9.jar;service jira start'
 
+# data
+docker exec -it jira_jira-software_1 bash
+cat /etc/group  # 1000
+
+chown -R jira:jira /var/atlassian/application-data
+
 # image
 idoall/mysql:5.7
 idoall/ubuntu16.04-jira-software:7.12.3

@@ -27,9 +27,8 @@ services:
   jira-software:
     image: "idoall/ubuntu16.04-jira-software:7.12.3"
     hostname: jira
-#    volumes:
-#      - ./data/opt:/opt/atlassian
-#      - ./data/var:/var/atlassian
+    volumes:
+      - ./data/jira:/var/atlassian/application-data
     ports:
       - "20030:8080"
       - "20031:8005"

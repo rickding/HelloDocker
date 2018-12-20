@@ -2,9 +2,8 @@ version: "3"
 services:
     web:
         image: "java-app"
-        build: .
         command: "java Hello"
-
+        build: .
         restart: always
         working_dir: /usr/code/
         volumes:

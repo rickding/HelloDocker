@@ -1,0 +1,26 @@
+version: '3'
+services:
+    ftp:
+        image: fauria/vsftpd:latest
+        restart: always
+        privileged: true
+        ports:
+            - "20:20"
+            - "21:21"
+            - "21100-21110:21100-21110"
+        volumes:
+            - ./files:/home/vsftpd
+        environment:
+            - FTP_USER=test
+            - FTP_PASS=test
+            - PASV_ADDRESS=192.168.1.157
+            - PASV_MIN_PORT=21100
+            - PASV_MAX_PORT=21110
+
+    web:
+        image: ftp_client:latest
+        command: "java -jar ftp-1.0-SNAPSHOT.jar"
+        build: .
+        restart: always
+        depends_on:
+            - ftp

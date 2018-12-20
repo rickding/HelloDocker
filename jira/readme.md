@@ -2,6 +2,7 @@
 https://mshk.top/2018/11/docker-jira-core-software-7-12-3/
 https://github.com/idoall/docker/tree/master/ubuntu16.04-jira-software
 
+# hack
 service jira stop
 mv /opt/atlassian/jira/atlassian-jira/WEB-INF/lib/atlassian-extras-3.2.jar /opt/atlassian/jira/atlassian-jira/WEB-INF/lib/atlassian-extras-3.2.jar.bak
 cp /usr/src/_jira/atlassian-extras-3.2.jar /opt/atlassian/jira/atlassian-jira/WEB-INF/lib/atlassian-extras-3.2.jar

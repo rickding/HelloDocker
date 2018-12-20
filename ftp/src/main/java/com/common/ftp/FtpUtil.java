@@ -76,7 +76,7 @@ public class FtpUtil {
         FTPClient ftpClient = getInst();
 
         try {
-            ftpClient.setFileType(ftpClient.BINARY_FILE_TYPE);  //设置传输的模式为二进制文件类型传输
+            ftpClient.setFileType(FTPClient.BINARY_FILE_TYPE);  //设置传输的模式为二进制文件类型传输
             ftpClient.makeDirectory(pathname);                      //设置目录
             ftpClient.changeWorkingDirectory(pathname);             //设置工作路径
 

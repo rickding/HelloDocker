@@ -1,3 +1,3 @@
-FROM ismaleiva90/weblogic12
+FROM store/oracle/weblogic:12.2.1.2
 
-EXPOSE 7001 7002
+EXPOSE 7001

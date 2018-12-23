@@ -4,6 +4,8 @@ services:
         image: weblogic
         build: .
         restart: always
+        volumes:
+          - ./domain.properties:/u01/oracle/properties
         ports:
             - 7001:7001
             - 7002:7002

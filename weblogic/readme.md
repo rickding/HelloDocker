@@ -1,16 +1,15 @@
 # weblogic
 https://blog.csdn.net/renfengjun/article/details/78581600
+https://github.com/oracle/docker-images/tree/master/OracleWebLogic
 
-git clone https://github.com/oracle/docker.git
-docker build -t oracle/serverjre:8
+docker login
+docker pull store/oracle/weblogic:12.2.1.2
 
-cd ./OracleWebLogic/dockerfiles/12.1.3
-# download server-jre-8u73-linux-x64.tar.gz, fmw_12.1.3.0.0_wls.jar, wls1213_dev_update3.zip
+docker run -d -p 7001:7001 store/oracle/weblogic:12.2.1.2
+docker logs container_id | grep password
 
-./buildDockerImage.sh -g
-
-# images
-store/oracle/weblogic:12.2.1.2
+http://127.0.0.1:7001/console
+weblogic/***
 
 # ismaleiva90/weblogic12
 https://www.cnblogs.com/DFX339/p/8493314.html

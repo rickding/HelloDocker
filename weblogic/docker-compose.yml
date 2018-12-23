@@ -1,0 +1,9 @@
+version: '3'
+services:
+    web:
+        image: weblogic
+        build: .
+        restart: always
+        ports:
+            - 7001:7001
+            - 7002:7002

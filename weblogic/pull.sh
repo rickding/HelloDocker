@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker pull ismaleiva90/weblogic
+docker pull ismaleiva90/weblogic12

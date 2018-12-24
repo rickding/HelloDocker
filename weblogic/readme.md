@@ -16,3 +16,8 @@ https://www.cnblogs.com/DFX339/p/8493314.html
 
 http://127.0.0.1:7001/console
 weblogic/welcome1
+
+# jar conflicts
+https://blog.csdn.net/blossomfzq/article/details/80651692
+https://shuwen.iteye.com/blog/1124220
+https://yq.aliyun.com/ziliao/422573

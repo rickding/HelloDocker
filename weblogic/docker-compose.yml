@@ -6,5 +6,6 @@ services:
         restart: always
         volumes:
           - ./domain.properties:/u01/oracle/properties
+          - ./webapps:/u01/oracle/weblogic/user_projects/domains/base_domain/servers/AdminServer/upload/
         ports:
             - 7001:7001

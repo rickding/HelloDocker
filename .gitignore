@@ -12,6 +12,7 @@ nohup.out
 data/
 mysql/data
 redis/data
+weblogic/webapps
 
 # Compiled class file
 *.class

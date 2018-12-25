@@ -70,6 +70,13 @@
         <plan-staging-mode xsi:nil="true"/>
         <cache-in-app-directory>false</cache-in-app-directory>
     </library>
+    <!--<app-deployment>-->
+        <!--<name>war</name>-->
+        <!--<target>AdminServer</target>-->
+        <!--<module-type>war</module-type>-->
+        <!--<source-path>/u01/oracle/weblogic/user_projects/domains/base_domain/servers/AdminServer/upload/war-0.0.1-SNAPSHOT.war</source-path>-->
+        <!--<security-dd-model>DDOnly</security-dd-model>-->
+    <!--</app-deployment>-->
     <jms-server>
         <name>myJMSServer</name>
         <target>AdminServer</target>

@@ -7,7 +7,6 @@ services:
     volumes:
       - ./logs:/home/weblogic/idea/logs
       - ./config/domain.properties:/u01/oracle/properties
-      - ./config/config.xml:/u01/oracle/weblogic/user_projects/domains/base_domain/config/config.xml
       - ./autodeploy:/u01/oracle/weblogic/user_projects/domains/base_domain/autodeploy
       - ./upload:/u01/oracle/weblogic/user_projects/domains/base_domain/servers/AdminServer/upload
     ports:

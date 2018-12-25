@@ -13,6 +13,7 @@ data/
 mysql/data
 redis/data
 weblogic/webapps
+weblogic12/webapps
 
 # Compiled class file
 *.class

@@ -1,28 +1,5 @@
 version: '3'
 services:
-  db:
-    image: mysql:5
-    command: --default-authentication-plugin=mysql_native_password
-    restart: always
-    volumes:
-      - ../mysql/data:/var/lib/mysql
-      - ../mysql/conf:/etc/mysql/conf.d
-      - ../mysql/initdb:/docker-entrypoint-initdb.d
-    ports:
-      - 3306:3306
-    environment:
-      MYSQL_DATABASE: ams
-      MYSQL_ROOT_PASSWORD: root
-
-  dba:
-    image: adminer
-    restart: always
-
-    ports:
-      - 8080:8080
-    depends_on:
-      - db
-
   web:
     image: weblogic
     build: .
@@ -32,5 +9,3 @@ services:
       - ./webapps:/u01/oracle/weblogic/user_projects/domains/base_domain/servers/AdminServer/upload/
     ports:
       - 7001:7001
-    depends_on:
-      - db

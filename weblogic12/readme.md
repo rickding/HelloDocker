@@ -21,3 +21,7 @@ weblogic/welcome1
 https://blog.csdn.net/blossomfzq/article/details/80651692
 https://shuwen.iteye.com/blog/1124220
 https://yq.aliyun.com/ziliao/422573
+
+# mysql
+drop database if exists ams;
+create database if not exists ams DEFAULT CHARSET utf8 COLLATE utf8_general_ci;

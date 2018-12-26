@@ -367,6 +367,9 @@ export JAVA_PROPERTIES
 JAVA_DEBUG=""
 export JAVA_DEBUG
 
+JAVA_OPTIONS="${JAVA_OPTIONS} -Dfile.encoding=utf-8"
+export JAVA_OPTIONS
+
 if [ "${debugFlag}" = "true" ] ; then
 	JAVA_DEBUG="-Xdebug -Xnoagent -Xrunjdwp:transport=dt_socket,address=${DEBUG_PORT},server=y,suspend=n -Djava.compiler=NONE"
 	export JAVA_DEBUG
@@ -474,7 +477,7 @@ if [ "${WEBLOGIC_EXTENSION_DIRS}" != "" ] ; then
 	export JAVA_OPTIONS
 fi
 
-JAVA_OPTIONS="${JAVA_OPTIONS} -Dfile.encoding=utf-8"
+JAVA_OPTIONS="${JAVA_OPTIONS}"
 export JAVA_OPTIONS
 
 # SET THE CLASSPATH

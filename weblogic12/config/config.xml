@@ -56,17 +56,7 @@
   </embedded-ldap>
   <configuration-version>12.1.3.0.0</configuration-version>
   <app-deployment>
-    <name>war-0.0.1-SNAPSHOT</name>
-    <target>AdminServer</target>
-    <module-type>war</module-type>
-    <source-path>servers/AdminServer/upload/war-0.0.1-SNAPSHOT.war</source-path>
-    <security-dd-model>DDOnly</security-dd-model>
-    <staging-mode xsi:nil="true"></staging-mode>
-    <plan-staging-mode xsi:nil="true"></plan-staging-mode>
-    <cache-in-app-directory>false</cache-in-app-directory>
-  </app-deployment>
-  <app-deployment>
-    <name>web_war-0.0.1-SNAPSHOT</name>
+    <name>web_war-0.0.1-SNAPSHOT#0.0.1-SNAPSHOT</name>
     <target>AdminServer</target>
     <module-type>war</module-type>
     <source-path>servers/AdminServer/upload/web_war-0.0.1-SNAPSHOT.war</source-path>

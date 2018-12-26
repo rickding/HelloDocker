@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker diff weblogic_web_1
+docker diff weblogic12_web_1

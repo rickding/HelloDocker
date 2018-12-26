@@ -13,8 +13,8 @@ data/
 mysql/data
 redis/data
 weblogic11/docker
-weblogic11/webapps
-weblogic12/webapps
+weblogic11/upload
+weblogic12/upload
 
 # Compiled class file
 *.class

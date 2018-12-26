@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<domain xsi:schemaLocation="http://xmlns.oracle.com/weblogic/security/wls http://xmlns.oracle.com/weblogic/security/wls/1.0/wls.xsd http://xmlns.oracle.com/weblogic/domain http://xmlns.oracle.com/weblogic/1.0/domain.xsd http://xmlns.oracle.com/weblogic/security http://xmlns.oracle.com/weblogic/1.0/security.xsd http://xmlns.oracle.com/weblogic/security/xacml http://xmlns.oracle.com/weblogic/security/xacml/1.0/xacml.xsd" xmlns="http://xmlns.oracle.com/weblogic/domain" xmlns:sec="http://xmlns.oracle.com/weblogic/security" xmlns:wls="http://xmlns.oracle.com/weblogic/security/wls" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<?xml version='1.0' encoding='UTF-8'?>
+<domain xmlns="http://xmlns.oracle.com/weblogic/domain" xmlns:sec="http://xmlns.oracle.com/weblogic/security" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wls="http://xmlns.oracle.com/weblogic/security/wls" xsi:schemaLocation="http://xmlns.oracle.com/weblogic/security/wls http://xmlns.oracle.com/weblogic/security/wls/1.0/wls.xsd http://xmlns.oracle.com/weblogic/domain http://xmlns.oracle.com/weblogic/1.0/domain.xsd http://xmlns.oracle.com/weblogic/security/xacml http://xmlns.oracle.com/weblogic/security/xacml/1.0/xacml.xsd http://xmlns.oracle.com/weblogic/security/providers/passwordvalidator http://xmlns.oracle.com/weblogic/security/providers/passwordvalidator/1.0/passwordvalidator.xsd http://xmlns.oracle.com/weblogic/security http://xmlns.oracle.com/weblogic/1.0/security.xsd">
   <name>base_domain</name>
   <domain-version>12.1.3.0.0</domain-version>
-  <security-configuration xmlns:xacml="http://xmlns.oracle.com/weblogic/security/xacml" xmlns:pas="http://xmlns.oracle.com/weblogic/security/providers/passwordvalidator">
+  <security-configuration>
     <name>base_domain</name>
     <realm>
       <sec:authentication-provider xsi:type="wls:default-authenticatorType">
@@ -12,10 +12,10 @@
         <sec:name>DefaultIdentityAsserter</sec:name>
         <sec:active-type>AuthenticatedUser</sec:active-type>
       </sec:authentication-provider>
-      <sec:role-mapper xsi:type="xacml:xacml-role-mapperType">
+      <sec:role-mapper xmlns:xac="http://xmlns.oracle.com/weblogic/security/xacml" xsi:type="xac:xacml-role-mapperType">
         <sec:name>XACMLRoleMapper</sec:name>
       </sec:role-mapper>
-      <sec:authorizer xsi:type="xacml:xacml-authorizerType">
+      <sec:authorizer xmlns:xac="http://xmlns.oracle.com/weblogic/security/xacml" xsi:type="xac:xacml-authorizerType">
         <sec:name>XACMLAuthorizer</sec:name>
       </sec:authorizer>
       <sec:adjudicator xsi:type="wls:default-adjudicatorType">
@@ -29,7 +29,7 @@
       </sec:cert-path-provider>
       <sec:cert-path-builder>WebLogicCertPathProvider</sec:cert-path-builder>
       <sec:name>myrealm</sec:name>
-      <sec:password-validator xsi:type="pas:system-password-validatorType">
+      <sec:password-validator xmlns:pas="http://xmlns.oracle.com/weblogic/security/providers/passwordvalidator" xsi:type="pas:system-password-validatorType">
         <sec:name>SystemPasswordValidator</sec:name>
         <pas:min-password-length>8</pas:min-password-length>
         <pas:min-numeric-or-special-characters>1</pas:min-numeric-or-special-characters>
@@ -47,7 +47,7 @@
       <enabled>true</enabled>
       <hostname-verification-ignored>true</hostname-verification-ignored>
     </ssl>
-    <listen-address/>
+    <listen-address></listen-address>
   </server>
   <production-mode-enabled>true</production-mode-enabled>
   <embedded-ldap>
@@ -61,8 +61,8 @@
     <module-type>war</module-type>
     <source-path>/u01/oracle/weblogic/wlserver/common/deployable-libraries/jax-rs-2.0.war</source-path>
     <security-dd-model>DDOnly</security-dd-model>
-    <staging-mode xsi:nil="true"/>
-    <plan-staging-mode xsi:nil="true"/>
+    <staging-mode xsi:nil="true"></staging-mode>
+    <plan-staging-mode xsi:nil="true"></plan-staging-mode>
     <cache-in-app-directory>false</cache-in-app-directory>
   </library>
   <jms-server>

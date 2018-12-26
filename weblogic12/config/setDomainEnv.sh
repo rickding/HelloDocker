@@ -349,7 +349,7 @@ pushd ${LONG_DOMAIN_HOME}
 
 if [ "${ADMIN_URL}" = "" ] ; then
 	# The then part of this block is telling us we are either starting an admin server OR we are non-clustered
-	CLUSTER_PROPERTIES=""
+	CLUSTER_PROPERTIES="-Dserver.config=.\server-config.properties -Dfile.encoding=utf-8"
 	export CLUSTER_PROPERTIES
 else
 	CLUSTER_PROPERTIES="-Dweblogic.management.server=${ADMIN_URL}"
@@ -366,9 +366,6 @@ export JAVA_PROPERTIES
 
 JAVA_DEBUG=""
 export JAVA_DEBUG
-
-JAVA_OPTIONS="${JAVA_OPTIONS} -Dfile.encoding=utf-8"
-export JAVA_OPTIONS
 
 if [ "${debugFlag}" = "true" ] ; then
 	JAVA_DEBUG="-Xdebug -Xnoagent -Xrunjdwp:transport=dt_socket,address=${DEBUG_PORT},server=y,suspend=n -Djava.compiler=NONE"

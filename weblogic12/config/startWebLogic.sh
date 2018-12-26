@@ -96,11 +96,11 @@ if [ "${DERBY_FLAG}" = "true" ] ; then
 fi
 
 JAVA_OPTIONS="${SAVE_JAVA_OPTIONS}"
-JAVA_OPTIONS="${JAVA_OPTIONS} -Dfile.encoding=utf-8"
 
 SAVE_JAVA_OPTIONS=""
 
 CLASSPATH="${SAVE_CLASSPATH}"
+JAVA_OPTIONS="${JAVA_OPTIONS} -Dfile.encoding=utf-8"
 
 SAVE_CLASSPATH=""
 

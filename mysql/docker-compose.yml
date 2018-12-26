@@ -3,23 +3,26 @@ services:
     db:
         image: mysql:5
         command: --default-authentication-plugin=mysql_native_password
-
         restart: always
         volumes:
             - ./data:/var/lib/mysql
             - ./conf:/etc/mysql/conf.d
             - ./initdb:/docker-entrypoint-initdb.d
-
+        deploy:
+            placement:
+                constraints: [node.labels.group == db]
         ports:
             - 3306:3306
         environment:
-            MYSQL_DATABASE: did
+            MYSQL_DATABASE: test
             MYSQL_ROOT_PASSWORD: root
 
     dba:
-        image: adminer
+        image: adminer:latest
         restart: always
-        
+        deploy:
+            placement:
+                constraints: [node.role == manager]
         ports:
             - 8080:8080
         depends_on:

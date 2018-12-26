@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<domain xmlns="http://xmlns.oracle.com/weblogic/domain" xmlns:sec="http://xmlns.oracle.com/weblogic/security" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wls="http://xmlns.oracle.com/weblogic/security/wls" xsi:schemaLocation="http://xmlns.oracle.com/weblogic/security/wls http://xmlns.oracle.com/weblogic/security/wls/1.0/wls.xsd http://xmlns.oracle.com/weblogic/domain http://xmlns.oracle.com/weblogic/1.0/domain.xsd http://xmlns.oracle.com/weblogic/security/xacml http://xmlns.oracle.com/weblogic/security/xacml/1.0/xacml.xsd http://xmlns.oracle.com/weblogic/security/providers/passwordvalidator http://xmlns.oracle.com/weblogic/security/providers/passwordvalidator/1.0/passwordvalidator.xsd http://xmlns.oracle.com/weblogic/security http://xmlns.oracle.com/weblogic/1.0/security.xsd">
+  <name>base_domain</name>
+  <domain-version>12.1.3.0.0</domain-version>
+  <security-configuration>
+    <name>base_domain</name>
+    <realm>
+      <sec:authentication-provider xsi:type="wls:default-authenticatorType">
+        <sec:name>DefaultAuthenticator</sec:name>
+      </sec:authentication-provider>
+      <sec:authentication-provider xsi:type="wls:default-identity-asserterType">
+        <sec:name>DefaultIdentityAsserter</sec:name>
+        <sec:active-type>AuthenticatedUser</sec:active-type>
+      </sec:authentication-provider>
+      <sec:role-mapper xmlns:xac="http://xmlns.oracle.com/weblogic/security/xacml" xsi:type="xac:xacml-role-mapperType">
+        <sec:name>XACMLRoleMapper</sec:name>
+      </sec:role-mapper>
+      <sec:authorizer xmlns:xac="http://xmlns.oracle.com/weblogic/security/xacml" xsi:type="xac:xacml-authorizerType">
+        <sec:name>XACMLAuthorizer</sec:name>
+      </sec:authorizer>
+      <sec:adjudicator xsi:type="wls:default-adjudicatorType">
+        <sec:name>DefaultAdjudicator</sec:name>
+      </sec:adjudicator>
+      <sec:credential-mapper xsi:type="wls:default-credential-mapperType">
+        <sec:name>DefaultCredentialMapper</sec:name>
+      </sec:credential-mapper>
+      <sec:cert-path-provider xsi:type="wls:web-logic-cert-path-providerType">
+        <sec:name>WebLogicCertPathProvider</sec:name>
+      </sec:cert-path-provider>
+      <sec:cert-path-builder>WebLogicCertPathProvider</sec:cert-path-builder>
+      <sec:name>myrealm</sec:name>
+      <sec:password-validator xmlns:pas="http://xmlns.oracle.com/weblogic/security/providers/passwordvalidator" xsi:type="pas:system-password-validatorType">
+        <sec:name>SystemPasswordValidator</sec:name>
+        <pas:min-password-length>8</pas:min-password-length>
+        <pas:min-numeric-or-special-characters>1</pas:min-numeric-or-special-characters>
+      </sec:password-validator>
+    </realm>
+    <default-realm>myrealm</default-realm>
+    <credential-encrypted>{AES}cjmA4dvs1oYrbVci5yTxZn25DdTElHooF9MbDHvrF6jwmnDCpdg8ehK/o/zHSsgHPoPHS95fSF3bPSJKq4Ctze6D8+j0n4nwx2aQCJ0yxY3tsfBVXVzxo6rJ/yMozhkT</credential-encrypted>
+    <node-manager-username>ak4hJKy9Kc</node-manager-username>
+    <node-manager-password-encrypted>{AES}HWLaBllI4LYBT2Ep21/Ov/SNANA5W82geeGh81mKMOY=</node-manager-password-encrypted>
+  </security-configuration>
+  <server>
+    <name>AdminServer</name>
+    <ssl>
+      <name>AdminServer</name>
+      <enabled>true</enabled>
+      <hostname-verification-ignored>true</hostname-verification-ignored>
+    </ssl>
+    <listen-address></listen-address>
+  </server>
+  <production-mode-enabled>true</production-mode-enabled>
+  <embedded-ldap>
+    <name>base_domain</name>
+    <credential-encrypted>{AES}3hKV5Tc5fXqvvCZK3oe/dGP8JJaayDsujbw/QyaVdIuKmRwDv5207BEZkk9dBJJI</credential-encrypted>
+  </embedded-ldap>
+  <configuration-version>12.1.3.0.0</configuration-version>
+  <app-deployment>
+    <name>web_war-0.0.1-SNAPSHOT#0.0.1-SNAPSHOT</name>
+    <target>AdminServer</target>
+    <module-type>war</module-type>
+    <source-path>servers/AdminServer/upload/web_war-0.0.1-SNAPSHOT.war</source-path>
+    <security-dd-model>DDOnly</security-dd-model>
+    <staging-mode xsi:nil="true"></staging-mode>
+    <plan-staging-mode xsi:nil="true"></plan-staging-mode>
+    <cache-in-app-directory>false</cache-in-app-directory>
+  </app-deployment>
+  <library>
+    <name>jax-rs#2.0@2.5.1</name>
+    <target>AdminServer</target>
+    <module-type>war</module-type>
+    <source-path>/u01/oracle/weblogic/wlserver/common/deployable-libraries/jax-rs-2.0.war</source-path>
+    <security-dd-model>DDOnly</security-dd-model>
+    <staging-mode xsi:nil="true"></staging-mode>
+    <plan-staging-mode xsi:nil="true"></plan-staging-mode>
+    <cache-in-app-directory>false</cache-in-app-directory>
+  </library>
+  <jms-server>
+    <name>myJMSServer</name>
+    <target>AdminServer</target>
+  </jms-server>
+  <jms-system-resource>
+    <name>myJmsSystemResource</name>
+    <sub-deployment>
+      <name>myQueueSubDeployment</name>
+      <target>myJMSServer</target>
+    </sub-deployment>
+    <descriptor-file-name>jms/myJmsSystemResource-6895-jms.xml</descriptor-file-name>
+  </jms-system-resource>
+  <admin-server-name>AdminServer</admin-server-name>
+</domain>

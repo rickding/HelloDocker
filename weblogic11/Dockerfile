@@ -1,3 +1,3 @@
 FROM alanpeng/oracle-weblogic11g:latest
 
-EXPOSE 7001
+EXPOSE 7001 7002

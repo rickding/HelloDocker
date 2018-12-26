@@ -4,5 +4,15 @@ services:
     image: weblogic11
     build: .
     restart: always
+    volumes:
+      - ./data/logs:/home/weblogic/idea/logs
+      - ./config/domain.properties:/u01/oracle/properties
+
+#      - ./config/config.xml:/u01/oracle/weblogic/user_projects/domains/base_domain/config/config.xml
+#      - ./config/setDomainEnv.sh:/u01/oracle/weblogic/user_projects/domains/base_domain/bin/setDomainEnv.sh
+#      - ./config/startWebLogic.sh:/u01/oracle/weblogic/user_projects/domains/base_domain/bin/startWebLogic.sh
+
+      - ./autodeploy:/u01/oracle/weblogic/user_projects/domains/base_domain/autodeploy
+      - ./webapps:/u01/oracle/weblogic/user_projects/domains/base_domain/servers/AdminServer/upload
     ports:
       - 7001:7001

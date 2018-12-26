@@ -5,4 +5,4 @@ services:
         build: .
         restart: always
         ports:
-            - 8081:8080
+            - 8080:8080

@@ -16,3 +16,4 @@ services:
       - ./webapps:/u01/oracle/weblogic/user_projects/domains/base_domain/servers/AdminServer/upload
     ports:
       - 7001:7001
+      - 7002:7002

@@ -349,7 +349,8 @@ pushd ${LONG_DOMAIN_HOME}
 
 if [ "${ADMIN_URL}" = "" ] ; then
 	# The then part of this block is telling us we are either starting an admin server OR we are non-clustered
-	CLUSTER_PROPERTIES="-Dserver.config=.\server-config.properties -Dfile.encoding=utf-8"
+	CLUSTER_PROPERTIES=""
+	# CLUSTER_PROPERTIES="-Dserver.config=.\server-config.properties -Dfile.encoding=utf-8"
 	export CLUSTER_PROPERTIES
 else
 	CLUSTER_PROPERTIES="-Dweblogic.management.server=${ADMIN_URL}"

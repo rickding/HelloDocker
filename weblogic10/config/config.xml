@@ -54,7 +54,7 @@
     <name>ams</name>
     <target>AdminServer</target>
     <module-type>war</module-type>
-    <source-path>servers/AdminServer/upload/ams.war</source-path>
+    <source-path>servers/AdminServer/upload/ams</source-path>
     <security-dd-model>DDOnly</security-dd-model>
   </app-deployment>
   <admin-server-name>AdminServer</admin-server-name>

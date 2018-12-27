@@ -12,6 +12,10 @@ qwertyz1981/weblogic_10.3.6
 # don't work
 iwanttobefreak/weblogic1036
 
+# jar conflicts
+https://blog.csdn.net/gl74gs48/article/details/8076320
+rm WEB-INF/lib/xml-apis-1.*.*
+
 # jdk1.7 compatible
 http://blog.51cto.com/rhelanker/1958875
 

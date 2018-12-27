@@ -6,11 +6,7 @@ services:
     restart: always
     volumes:
       - ./data/logs:/home/weblogic/idea/logs
-
 #      - ./config/config.xml:/root/Oracle/Middleware/user_projects/domains/base_domain/config/config.xml
-#      - ./config/setDomainEnv.sh:/root/Oracle/Middleware/user_projects/domains/base_domain/bin/setDomainEnv.sh
-#      - ./config/startWebLogic.sh:/root/Oracle/Middleware/user_projects/domains/base_domain/in/startWebLogic.sh
-
       - ./autodeploy:/root/Oracle/Middleware/user_projects/domains/base_domain/autodeploy
       - ./webapps:/root/Oracle/Middleware/user_projects/domains/base_domain/servers/AdminServer/upload
     ports:

@@ -1,16 +1,17 @@
 version: '3'
 services:
   web:
-#    image: weblogic10
-#    build: .
-    image: weblogic10_jdk7
+    image: weblogic10
+    build: .
     restart: always
     volumes:
+      - ./jdk7:/root/jdk/jdk7
+      - ./jdk7/endorsed:/usr/lib/jvm/java-1.7.0-openjdk-amd64/jre/lib/endorsed
       - ./jdk7/endorsed:/root/jdk/jdk1.6.0_45/jre/lib/endorsed
       - ./data/logs:/home/weblogic/idea/logs
       - ./config/config.xml:/root/Oracle/Middleware/user_projects/domains/base_domain/config/config.xml
-      - ./config/setDomainEnv.sh:/u01/oracle/weblogic/user_projects/domains/base_domain/bin/setDomainEnv.sh
-      - ./config/startWebLogic.sh:/u01/oracle/weblogic/user_projects/domains/base_domain/bin/startWebLogic.sh
+      - ./config/setDomainEnv.sh:/root/Oracle/Middleware/user_projects/domains/base_domain/bin/setDomainEnv.sh
+      - ./config/startWebLogic.sh:/root/Oracle/Middleware/user_projects/domains/base_domain/bin/startWebLogic.sh
       - ./autodeploy:/root/Oracle/Middleware/user_projects/domains/base_domain/autodeploy
       - ./webapps:/root/Oracle/Middleware/user_projects/domains/base_domain/servers/AdminServer/upload
     ports:

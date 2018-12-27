@@ -54,46 +54,27 @@ popd()
 #                   command-line parameter named production
 #                   NOTE: Specifying the production command-line param will force 
 #                          the server to start in production mode.
-# WLS_POLICY_FILE - Java policy file to use. Set this environment variable to specify a policy file.
-#                   Otherwise this script will assign a default value.
 # 
 # Other variables used in this script include:
 # SERVER_NAME     - Name of the weblogic server.
 # JAVA_OPTIONS    - Java command-line options for running the server. (These
 #                   will be tagged on to the end of the JAVA_VM and
 #                   MEM_ARGS)
-# PROXY_SETTINGS  - These are tagged on to the end of the JAVA_OPTIONS. This variable is deprecated and should not
-#                   be used. Instead use JAVA_OPTIONS
 # 
-# For additional information, refer to "Administering Server Startup and Shutdown for Oracle WebLogic Server"
+# For additional information, refer to "Managing Server Startup and Shutdown for Oracle WebLogic Server"
+# (http://download.oracle.com/docs/cd/E23943_01/web.1111/e13708/overview.htm).
 # *************************************************************************
 
-WL_HOME="/u01/oracle/weblogic/wlserver"
+WL_HOME="/root/Oracle/Middleware/wlserver_10.3"
 export WL_HOME
 
 BEA_JAVA_HOME=""
 export BEA_JAVA_HOME
 
-DEFAULT_BEA_JAVA_HOME=""
-export DEFAULT_BEA_JAVA_HOME
-
-SUN_JAVA_HOME="/usr/java/jdk1.8.0_25"
+SUN_JAVA_HOME="/root/jdk/jdk1.6.0_45"
 export SUN_JAVA_HOME
 
-DEFAULT_SUN_JAVA_HOME="/usr/java/jdk1.8.0_25"
-export DEFAULT_SUN_JAVA_HOME
-
-if [ "${SUN_JAVA_HOME}" = "" ] ; then
-	SUN_JAVA_HOME="@DEFAULT_SUN_JAVA_HOME"
-	export SUN_JAVA_HOME
-fi
-
-if [ "${BEA_JAVA_HOME}" = "" ] ; then
-	BEA_JAVA_HOME="@DEFAULT_BEA_JAVA_HOME"
-	export BEA_JAVA_HOME
-fi
-
-if [ "${VM_TYPE}" = "JRockit" ] ; then
+if [ "${JAVA_VENDOR}" = "Oracle" ] ; then
 	JAVA_HOME="${BEA_JAVA_HOME}"
 	export JAVA_HOME
 else
@@ -101,12 +82,10 @@ else
 		JAVA_HOME="${SUN_JAVA_HOME}"
 		export JAVA_HOME
 	else
-		JAVA_VENDOR="Oracle"
+		JAVA_VENDOR="Sun"
 		export JAVA_VENDOR
-		JAVA_HOME="/usr/java/jdk1.8.0_25"
+		JAVA_HOME="/root/jdk/jdk1.6.0_45"
 		export JAVA_HOME
-		VM_TYPE="HotSpot"
-		export VM_TYPE
 	fi
 fi
 
@@ -119,10 +98,10 @@ export JAVA_HOME
 SAMPLES_HOME="${WL_HOME}/samples"
 export SAMPLES_HOME
 
-DOMAIN_HOME="/u01/oracle/weblogic/user_projects/domains/base_domain"
+DOMAIN_HOME="/root/Oracle/Middleware/user_projects/domains/base_domain"
 export DOMAIN_HOME
 
-LONG_DOMAIN_HOME="/u01/oracle/weblogic/user_projects/domains/base_domain"
+LONG_DOMAIN_HOME="/root/Oracle/Middleware/user_projects/domains/base_domain"
 export LONG_DOMAIN_HOME
 
 if [ "${DEBUG_PORT}" = "" ] ; then
@@ -135,17 +114,13 @@ if [ "${SERVER_NAME}" = "" ] ; then
 	export SERVER_NAME
 fi
 
-# Set DERBY_FLAG, if derby is available.
-
-if [ -f ${WL_HOME}/common/derby/lib/derby.jar ] ; then
-	DERBY_FLAG="true"
-	export DERBY_FLAG
-fi
+DERBY_FLAG="false"
+export DERBY_FLAG
 
 enableHotswapFlag=""
 export enableHotswapFlag
 
-PRODUCTION_MODE="true"
+PRODUCTION_MODE=""
 export PRODUCTION_MODE
 
 doExitFlag="false"
@@ -162,6 +137,18 @@ do
 	production)
 		DOMAIN_PRODUCTION_MODE="true"
 		export DOMAIN_PRODUCTION_MODE
+		;;
+	notestconsole)
+		testConsoleFlag="false"
+		export testConsoleFlag
+		;;
+	noiterativedev)
+		iterativeDevFlag="false"
+		export iterativeDevFlag
+		;;
+	noLogErrorsToConsole)
+		logErrorsToConsoleFlag="false"
+		export logErrorsToConsoleFlag
 		;;
 	noderby)
 		DERBY_FLAG="false"
@@ -203,6 +190,12 @@ fi
 if [ "${PRODUCTION_MODE}" = "true" ] ; then
 	debugFlag="false"
 	export debugFlag
+	testConsoleFlag="false"
+	export testConsoleFlag
+	iterativeDevFlag="false"
+	export iterativeDevFlag
+	logErrorsToConsoleFlag="false"
+	export logErrorsToConsoleFlag
 fi
 
 # If you want to override the default Patch Classpath, Library Path and Path for this domain,
@@ -219,19 +212,16 @@ fi
 WLS_HOME="${WL_HOME}/server"
 export WLS_HOME
 
-WLS_MEM_ARGS_64BIT="-Xms512m -Xmx512m"
-export WLS_MEM_ARGS_64BIT
-
-WLS_MEM_ARGS_32BIT="-Xms512m -Xmx512m"
-export WLS_MEM_ARGS_32BIT
-
-if [ "${JAVA_VENDOR}" != "HP" ] ; then
-	if [ "${VM_TYPE}" = "HotSpot" ] ; then
-		WLS_MEM_ARGS_64BIT="-Xms256m -Xmx512m"
-		export WLS_MEM_ARGS_64BIT
-		WLS_MEM_ARGS_32BIT="-Xms256m -Xmx512m"
-		export WLS_MEM_ARGS_32BIT
-	fi
+if [ "${JAVA_VENDOR}" = "Sun" ] ; then
+	WLS_MEM_ARGS_64BIT="-Xms256m -Xmx512m"
+	export WLS_MEM_ARGS_64BIT
+	WLS_MEM_ARGS_32BIT="-Xms256m -Xmx512m"
+	export WLS_MEM_ARGS_32BIT
+else
+	WLS_MEM_ARGS_64BIT="-Xms512m -Xmx512m"
+	export WLS_MEM_ARGS_64BIT
+	WLS_MEM_ARGS_32BIT="-Xms512m -Xmx512m"
+	export WLS_MEM_ARGS_32BIT
 fi
 
 MEM_ARGS_64BIT="${WLS_MEM_ARGS_64BIT}"
@@ -251,7 +241,7 @@ fi
 MEM_PERM_SIZE_64BIT="-XX:PermSize=128m"
 export MEM_PERM_SIZE_64BIT
 
-MEM_PERM_SIZE_32BIT="-XX:PermSize=128m"
+MEM_PERM_SIZE_32BIT="-XX:PermSize=48m"
 export MEM_PERM_SIZE_32BIT
 
 if [ "${JAVA_USE_64BIT}" = "true" ] ; then
@@ -265,7 +255,7 @@ fi
 MEM_MAX_PERM_SIZE_64BIT="-XX:MaxPermSize=256m"
 export MEM_MAX_PERM_SIZE_64BIT
 
-MEM_MAX_PERM_SIZE_32BIT="-XX:MaxPermSize=256m"
+MEM_MAX_PERM_SIZE_32BIT="-XX:MaxPermSize=128m"
 export MEM_MAX_PERM_SIZE_32BIT
 
 if [ "${JAVA_USE_64BIT}" = "true" ] ; then
@@ -276,22 +266,18 @@ else
 	export MEM_MAX_PERM_SIZE
 fi
 
-if [ "${JAVA_VENDOR}" != "HP" ] ; then
-	if [ "${VM_TYPE}" = "HotSpot" ] ; then
-		if [ "${PRODUCTION_MODE}" = "" ] ; then
-			MEM_DEV_ARGS="-XX:CompileThreshold=8000 ${MEM_PERM_SIZE} "
-			export MEM_DEV_ARGS
-		fi
+if [ "${JAVA_VENDOR}" = "Sun" ] ; then
+	if [ "${PRODUCTION_MODE}" = "" ] ; then
+		MEM_DEV_ARGS="-XX:CompileThreshold=8000 ${MEM_PERM_SIZE} "
+		export MEM_DEV_ARGS
 	fi
 fi
 
 # Had to have a separate test here BECAUSE of immediate variable expansion on windows
 
-if [ "${JAVA_VENDOR}" != "HP" ] ; then
-	if [ "${VM_TYPE}" = "HotSpot" ] ; then
-		MEM_ARGS="${MEM_ARGS} ${MEM_DEV_ARGS} ${MEM_MAX_PERM_SIZE}"
-		export MEM_ARGS
-	fi
+if [ "${JAVA_VENDOR}" = "Sun" ] ; then
+	MEM_ARGS="${MEM_ARGS} ${MEM_DEV_ARGS} ${MEM_MAX_PERM_SIZE}"
+	export MEM_ARGS
 fi
 
 if [ "${JAVA_VENDOR}" = "HP" ] ; then
@@ -304,18 +290,6 @@ if [ "${JAVA_VENDOR}" = "Apple" ] ; then
 	export MEM_ARGS
 fi
 
-# Set server startup configuration, if available.
-
-if [ -f ${DOMAIN_HOME}/bin/setStartupEnv.sh ] ; then
-	. ${DOMAIN_HOME}/bin/setStartupEnv.sh
-fi
-
-# Set user overrides, if available.
-
-if [ -f ${DOMAIN_HOME}/bin/setUserOverrides.sh ] ; then
-	. ${DOMAIN_HOME}/bin/setUserOverrides.sh
-fi
-
 # IF USER_MEM_ARGS the environment variable is set, use it to override ALL MEM_ARGS values
 
 if [ "${USER_MEM_ARGS}" != "" ] ; then
@@ -323,7 +297,7 @@ if [ "${USER_MEM_ARGS}" != "" ] ; then
 	export MEM_ARGS
 fi
 
-JAVA_PROPERTIES="-Dwls.home=${WLS_HOME} -Dweblogic.home=${WLS_HOME} "
+JAVA_PROPERTIES="-Dplatform.home=${WL_HOME} -Dwls.home=${WLS_HOME} -Dweblogic.home=${WLS_HOME} "
 export JAVA_PROPERTIES
 
 #  To use Java Authorization Contract for Containers (JACC) in this domain, 
@@ -349,11 +323,10 @@ pushd ${LONG_DOMAIN_HOME}
 
 if [ "${ADMIN_URL}" = "" ] ; then
 	# The then part of this block is telling us we are either starting an admin server OR we are non-clustered
-	CLUSTER_PROPERTIES=""
-	# CLUSTER_PROPERTIES="-Dserver.config=.\server-config.properties -Dfile.encoding=utf-8"
+	CLUSTER_PROPERTIES="-Dweblogic.management.discover=true"
 	export CLUSTER_PROPERTIES
 else
-	CLUSTER_PROPERTIES="-Dweblogic.management.server=${ADMIN_URL}"
+	CLUSTER_PROPERTIES="-Dweblogic.management.discover=false -Dweblogic.management.server=${ADMIN_URL}"
 	export CLUSTER_PROPERTIES
 fi
 
@@ -426,7 +399,7 @@ export SERVER_CLASS
 JAVA_PROPERTIES="${JAVA_PROPERTIES} ${WLP_JAVA_PROPERTIES}"
 export JAVA_PROPERTIES
 
-JAVA_OPTIONS="${JAVA_OPTIONS} ${JAVA_PROPERTIES}"
+JAVA_OPTIONS="${JAVA_OPTIONS} ${JAVA_PROPERTIES} -Dwlw.iterativeDev=${iterativeDevFlag} -Dwlw.testConsole=${testConsoleFlag} -Dwlw.logErrorsToConsole=${logErrorsToConsoleFlag}"
 export JAVA_OPTIONS
 
 if [ "${PRODUCTION_MODE}" = "true" ] ; then
@@ -515,16 +488,11 @@ if [ "${PRE_CLASSPATH}" != "" ] ; then
 	export CLASSPATH
 fi
 
-if [ "${VM_TYPE}" != "JRockit" ] ; then
+if [ "${JAVA_VENDOR}" != "BEA" ] ; then
 	JAVA_VM="${JAVA_VM} ${JAVA_DEBUG} ${JAVA_PROFILE}"
 	export JAVA_VM
 else
 	JAVA_VM="${JAVA_VM} ${JAVA_DEBUG} ${JAVA_PROFILE}"
 	export JAVA_VM
-fi
-
-if [ "${WLS_POLICY_FILE}" = "" ] ; then
-	WLS_POLICY_FILE="${WL_HOME}/server/lib/weblogic.policy"
-	export WLS_POLICY_FILE
 fi
 

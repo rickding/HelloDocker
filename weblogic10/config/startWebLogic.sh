@@ -65,20 +65,18 @@ classCaching()
 # JAVA_OPTIONS   - Java command-line options for running the server. (These
 #                  will be tagged on to the end of the JAVA_VM and
 #                  MEM_ARGS)
-# SAVE_MEMORY    - Put server in a mode where it is frugal with memory, potentially sacrificing performance to do so.
 # CLASS_CACHE    - Enable class caching of system classpath.
-# PROXY_SETTINGS - These are tagged on to the end of the JAVA_OPTIONS. This variable is deprecated and should not
-#                  be used. Instead use JAVA_OPTIONS
 # 
-# For additional information, refer to "Administering Server Startup and Shutdown for Oracle WebLogic Server"
+# For additional information, refer to "Managing Server Startup and Shutdown for Oracle WebLogic Server"
+#  (http://download.oracle.com/docs/cd/E23943_01/web.1111/e13708/overview.htm).
 # *************************************************************************
 
-umask 027
+umask 037
 
 
 # Call setDomainEnv here.
 
-DOMAIN_HOME="/u01/oracle/weblogic/user_projects/domains/base_domain"
+DOMAIN_HOME="/root/Oracle/Middleware/user_projects/domains/base_domain"
 
 . ${DOMAIN_HOME}/bin/setDomainEnv.sh $*
 
@@ -100,7 +98,6 @@ JAVA_OPTIONS="${SAVE_JAVA_OPTIONS}"
 SAVE_JAVA_OPTIONS=""
 
 CLASSPATH="${SAVE_CLASSPATH}"
-# JAVA_OPTIONS="${JAVA_OPTIONS} -Dfile.encoding=utf-8"
 
 SAVE_CLASSPATH=""
 
@@ -137,6 +134,10 @@ echo "JAVA Memory arguments: ${MEM_ARGS}"
 
 echo "."
 
+echo "WLS Start Mode=${WLS_DISPLAY_MODE}"
+
+echo "."
+
 echo "CLASSPATH=${CLASSPATH}"
 
 echo "."
@@ -157,12 +158,6 @@ echo "*  console at http://hostname:port/console        *"
 
 echo "***************************************************"
 
-# SAVE MEMORY
-
-if [ -f ${WL_HOME}/server/bin/saveMemory.sh ] ; then
-	. ${WL_HOME}/server/bin/saveMemory.sh
-fi
-
 # CLASS CACHING
 
 if [ "${CLASS_CACHE}" = "true" ] ; then
@@ -177,11 +172,11 @@ ${JAVA_HOME}/bin/java ${JAVA_VM} -version
 
 if [ "${WLS_REDIRECT_LOG}" = "" ] ; then
 	echo "Starting WLS with line:"
-	echo "${JAVA_HOME}/bin/java ${JAVA_VM} ${MEM_ARGS} -Dweblogic.Name=${SERVER_NAME} -Djava.security.policy=${WLS_POLICY_FILE} ${JAVA_OPTIONS} ${PROXY_SETTINGS} ${SERVER_CLASS}"
-	${JAVA_HOME}/bin/java ${JAVA_VM} ${MEM_ARGS} -Dweblogic.Name=${SERVER_NAME} -Djava.security.policy=${WLS_POLICY_FILE} ${JAVA_OPTIONS} ${PROXY_SETTINGS} ${SERVER_CLASS}
+	echo "${JAVA_HOME}/bin/java ${JAVA_VM} ${MEM_ARGS} -Dweblogic.Name=${SERVER_NAME} -Djava.security.policy=${WL_HOME}/server/lib/weblogic.policy ${JAVA_OPTIONS} ${PROXY_SETTINGS} ${SERVER_CLASS}"
+	${JAVA_HOME}/bin/java ${JAVA_VM} ${MEM_ARGS} -Dweblogic.Name=${SERVER_NAME} -Djava.security.policy=${WL_HOME}/server/lib/weblogic.policy ${JAVA_OPTIONS} ${PROXY_SETTINGS} ${SERVER_CLASS}
 else
 	echo "Redirecting output from WLS window to ${WLS_REDIRECT_LOG}"
-	${JAVA_HOME}/bin/java ${JAVA_VM} ${MEM_ARGS} -Dweblogic.Name=${SERVER_NAME} -Djava.security.policy=${WLS_POLICY_FILE} ${JAVA_OPTIONS} ${PROXY_SETTINGS} ${SERVER_CLASS}  >"${WLS_REDIRECT_LOG}" 2>&1 
+	${JAVA_HOME}/bin/java ${JAVA_VM} ${MEM_ARGS} -Dweblogic.Name=${SERVER_NAME} -Djava.security.policy=${WL_HOME}/server/lib/weblogic.policy ${JAVA_OPTIONS} ${PROXY_SETTINGS} ${SERVER_CLASS}  >"${WLS_REDIRECT_LOG}" 2>&1 
 fi
 
 stopAll

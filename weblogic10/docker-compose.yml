@@ -1,11 +1,12 @@
 version: '3'
 services:
   web:
-    image: weblogic10
-    build: .
+#    image: weblogic10
+#    build: .
+    image: weblogic10_jdk7
     restart: always
     volumes:
-      - ./jdk/lib:/root/jdk/jdk1.6.0_45/jre/lib/endorsed
+      - ./jdk7/endorsed:/root/jdk/jdk1.6.0_45/jre/lib/endorsed
       - ./data/logs:/home/weblogic/idea/logs
       - ./config/config.xml:/root/Oracle/Middleware/user_projects/domains/base_domain/config/config.xml
       - ./config/setDomainEnv.sh:/u01/oracle/weblogic/user_projects/domains/base_domain/bin/setDomainEnv.sh

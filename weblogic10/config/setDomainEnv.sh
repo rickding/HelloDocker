@@ -71,7 +71,8 @@ export WL_HOME
 BEA_JAVA_HOME=""
 export BEA_JAVA_HOME
 
-SUN_JAVA_HOME="/root/jdk/jdk1.6.0_45"
+# SUN_JAVA_HOME="/root/jdk/jdk1.6.0_45"
+SUN_JAVA_HOME="/usr/lib/jvm/java-1.7.0-openjdk-amd64"
 export SUN_JAVA_HOME
 
 if [ "${JAVA_VENDOR}" = "Oracle" ] ; then
@@ -84,7 +85,8 @@ else
 	else
 		JAVA_VENDOR="Sun"
 		export JAVA_VENDOR
-		JAVA_HOME="/root/jdk/jdk1.6.0_45"
+		# JAVA_HOME="/root/jdk/jdk1.6.0_45"
+		JAVA_HOME="/usr/lib/jvm/java-1.7.0-openjdk-amd64"
 		export JAVA_HOME
 	fi
 fi

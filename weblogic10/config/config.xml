@@ -43,5 +43,12 @@
     <source-path>servers/AdminServer/upload/web_war-0.0.1-SNAPSHOT.war</source-path>
     <security-dd-model>DDOnly</security-dd-model>
   </app-deployment>
+  <app-deployment>
+    <name>war-0</name>
+    <target>AdminServer</target>
+    <module-type>war</module-type>
+    <source-path>servers/AdminServer/upload/war-0.0.1-SNAPSHOT.war</source-path>
+    <security-dd-model>DDOnly</security-dd-model>
+  </app-deployment>
   <admin-server-name>AdminServer</admin-server-name>
 </domain>

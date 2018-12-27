@@ -12,7 +12,7 @@ nohup.out
 data/
 mysql/data
 redis/data
-weblogic11/docker
+weblogic10/webapps
 weblogic11/webapps
 weblogic12/webapps
 

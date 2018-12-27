@@ -1,7 +1,11 @@
 #!/bin/bash
 
-cd ../../HelloJava/HelloWebWar/
+cd ../../HelloJava/HelloWar/
 ./package.sh
+
+cd ../HelloWebWar/
+./package.sh
+
 cd ../../HelloDocker/weblogic12
 
 cp ../../HelloJava/HelloWar/target/war-0.0.1-SNAPSHOT.war ./webapps

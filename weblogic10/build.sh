@@ -20,8 +20,8 @@ cd ../../nx/ams/
 cd ../../HelloDocker/weblogic10
 cp ../../nx/ams-web/target/ams.war ./webapps
 
-rm ./webapps/ams -rf
-mv ../../nx/ams-web/target/ams ./webapps
+# rm ./webapps/ams -rf
+# mv ../../nx/ams-web/target/ams ./webapps
 
 chmod a+w -R ../
 chmod a+w -R ../../nx

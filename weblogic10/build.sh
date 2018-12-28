@@ -18,11 +18,11 @@
 cd ../../nx/ams/
 ./package.sh
 cd ../../HelloDocker/weblogic10
-cp ../../nx/ams-web/target/ams-3.0.0.war ./webapps
+cp ../../nx/ams-web/target/ams.war ./webapps
 
 rm ./webapps/ams -rf
 mv ../../nx/ams-web/target/ams ./webapps
-rm ./webapps/ams/WEB-INF/lib/xml-apis-*.jar
+
 chmod a+w -R ../
 chmod a+w -R ../../nx
 

@@ -3,6 +3,7 @@ https://blog.csdn.net/archersaber39/article/details/80135463
 https://hub.docker.com/r/zhiqzhao/ubuntu_weblogic1036_domain
 
 zhiqzhao/ubuntu_weblogic1036_domain
+registry.cn-shanghai.aliyuncs.com/hellodock/weblogic10
 registry.cn-shanghai.aliyuncs.com/hellodock/weblogic10_jdk7
 
 http://127.0.0.1:7001/console

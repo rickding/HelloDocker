@@ -5,12 +5,26 @@ services:
     build: .
     restart: always
     volumes:
-      - ./jdk7:/root/jdk/jdk7
-      - ./jdk7/endorsed:/root/jdk/jdk1.6.0_45/jre/lib/endorsed
       - ./data/logs:/home/weblogic/idea/logs
+      - ./jdk7:/root/jdk/jdk7
+
+      - ./wls-jar-conflicts/jdk/endorsed:/usr/lib/jvm/java-1.7.0-openjdk-amd64/jre/lib/endorsed
+      - ./wls-jar-conflicts/jdk/ext/antlr-2.7.7.jar:/usr/lib/jvm/java-1.7.0-openjdk-amd64/jre/lib/ext/antlr-2.7.7.jar
+      - ./wls-jar-conflicts/jdk/ext/hibernate-jpa-2.1-api-1.0.0.Final.jar:/usr/lib/jvm/java-1.7.0-openjdk-amd64/jre/lib/ext/hibernate-jpa-2.1-api-1.0.0.Final.jar
+      - ./wls-jar-conflicts/jdk/ext/validation-api-1.1.0.Final.jar:/usr/lib/jvm/java-1.7.0-openjdk-amd64/jre/lib/ext/validation-api-1.1.0.Final.jar
+
+      - ./wls-jar-conflicts/jdk/endorsed:/root/jdk/jdk1.6.0_45/jre/lib/endorsed
+      - ./wls-jar-conflicts/jdk/ext/antlr-2.7.7.jar:/root/jdk/jdk1.6.0_45/jre/lib/ext/antlr-2.7.7.jar
+      - ./wls-jar-conflicts/jdk/ext/hibernate-jpa-2.1-api-1.0.0.Final.jar:/root/jdk/jdk1.6.0_45/jre/lib/ext/hibernate-jpa-2.1-api-1.0.0.Final.jar
+      - ./wls-jar-conflicts/jdk/ext/validation-api-1.1.0.Final.jar:/root/jdk/jdk1.6.0_45/jre/lib/ext/validation-api-1.1.0.Final.jar
+
+      - ./wls-jar-conflicts/modules/com.bea.core.kodo_1.5.0.0_4-2-1.jar:/root/Oracle/Middleware/modules/com.bea.core.kodo_1.5.0.0_4-2-1.jar
+      - ./wls-jar-conflicts/modules/org.apache.openjpa_1.3.0.0_1-1-1-SNAPSHOT.jar:/root/Oracle/Middleware/modules/org.apache.openjpa_1.3.0.0_1-1-1-SNAPSHOT.jar
+
       - ./config/config.xml:/root/Oracle/Middleware/user_projects/domains/base_domain/config/config.xml
       - ./config/setDomainEnv.sh:/root/Oracle/Middleware/user_projects/domains/base_domain/bin/setDomainEnv.sh
       - ./config/startWebLogic.sh:/root/Oracle/Middleware/user_projects/domains/base_domain/bin/startWebLogic.sh
+
       - ./autodeploy:/root/Oracle/Middleware/user_projects/domains/base_domain/autodeploy
       - ./webapps:/root/Oracle/Middleware/user_projects/domains/base_domain/servers/AdminServer/upload
     ports:

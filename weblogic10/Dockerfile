@@ -1,5 +1,6 @@
 # FROM zhiqzhao/ubuntu_weblogic1036_domain:latest
-FROM weblogic10_jdk7
+# FROM registry.cn-shanghai.aliyuncs.com/hellodock/weblogic10:latest
+FROM registry.cn-shanghai.aliyuncs.com/hellodock/weblogic10_jdk7:latest
 
 WORKDIR /root/Oracle/Middleware/user_projects/domains/base_domain
 

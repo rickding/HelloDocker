@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-clear
 
 ./stop.sh
 

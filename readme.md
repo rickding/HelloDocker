@@ -85,6 +85,7 @@ https://www.cnblogs.com/linjj/p/5606911.html
 FROM docker/whalesay:latest
 RUN apt-get -y update && apt-get install -y fortunes
 CMD /usr/games/fortune -a | cowsay
+VOLUME /tmp/file
 
 - docker build -t docker-whale .
 - docker images

@@ -1,4 +1,5 @@
 FROM idoall/ubuntu16.04-jira-software:7.12.3
+# FROM registry.cn-shanghai.aliyuncs.com/hellodock/jira:7.12.3
 
 # files
 # COPY ./lib/ /opt/atlassian/jira/atlassian-jira/WEB-INF/lib/

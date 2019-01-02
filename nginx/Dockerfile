@@ -4,8 +4,9 @@ FROM nginx:stable
 COPY ./web/ /usr/share/nginx/html
 
 # config
-COPY ./nginx.conf /etc/nginx
-COPY ./conf.d /etc/nginx/conf.d
+COPY ./conf/nginx.conf /etc/nginx/nginx.conf
+COPY ./conf/conf.d /etc/nginx/conf.d
 
+WORKDIR /etc/nginx
 
 EXPOSE 80

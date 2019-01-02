@@ -25,7 +25,8 @@ services:
         condition: on-failure
 
   jira-software:
-    image: "idoall/ubuntu16.04-jira-software:7.12.3"
+    image: "jira:7.12.3"
+    build: .
     hostname: jira
     volumes:
       - ./data/jira:/var/atlassian/application-data

@@ -4,7 +4,7 @@
 # ./login.sh
 
 # img:tag repo:tag namespace server
-set weblogic10:latest weblogic10:latest hellodock registry.cn-shanghai.aliyuncs.com
+set mysql:5 mysql:5 hellodock registry.cn-shanghai.aliyuncs.com
 
 docker rmi $4/$3/$2
 docker tag $1 $4/$3/$2

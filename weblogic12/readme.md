@@ -11,8 +11,10 @@ docker logs container_id | grep password
 http://127.0.0.1:7001/console
 weblogic/***
 
-# ismaleiva90/weblogic12
-https://www.cnblogs.com/DFX339/p/8493314.html
+# https://www.cnblogs.com/DFX339/p/8493314.html
+ismaleiva90/weblogic12
+registry.cn-shanghai.aliyuncs.com/hellodock/weblogic12
+
 http://127.0.0.1:7001/console
 weblogic/welcome1
 

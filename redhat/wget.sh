@@ -1,8 +1,5 @@
 #!/bin/bash
 
-gunzip < wget-1.20.tar.gz | tar -xv
-cd wget-1.20
+rpm -ivh wget-1.20-1.fc30.x86_64.rpm
 
-./configure
-make
-make isntall
+wget

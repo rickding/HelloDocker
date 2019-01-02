@@ -7,5 +7,7 @@ clear
 docker-compose up -d
 docker-compose ps
 
-# alias dcmp=docker-compose && dcmp logs -f
+# docker-compose logs -f
 # docker exec -it rabbit_mq_1 bash -c "rabbitmqctl list_users"
+
+# http://127.0.0.1:15672

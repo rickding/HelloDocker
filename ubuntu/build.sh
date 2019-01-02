@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker build -t ubuntu:7.2 .
+docker build -t ubuntu:18.04.local .

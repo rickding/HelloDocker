@@ -6,7 +6,7 @@ COPY ./init /etc/init
 WORKDIR /etc/init
 
 # wget
-# RUN wget | cd ./wget.sh
+# RUN wget | ./wget.sh
 
 # update yum & repo
 # RUN ./yum.sh

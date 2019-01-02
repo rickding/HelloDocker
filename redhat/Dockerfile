@@ -1,18 +1,19 @@
 # FROM yjjy0921/redhat7.2:latest
-FROM wjp719/redhat6.5:latest
+# FROM wjp719/redhat6.5:latest
+FROM inventx/redhat-openjdk-18:latest
 
-WORKDIR /etc
+COPY ./init /etc/init
+WORKDIR /etc/init
 
 # wget
-COPY ./wget.sh wget-1.20-1.fc30.x86_64.rpm /etc/
-RUN wget | ./wget.sh
+# RUN wget | cd ./wget.sh
 
 # update yum & repo
-COPY ./yum.sh /etc/yum.sh
 # RUN ./yum.sh
 
 # CMD $PWD
 
-ENTRYPOINT ls -al ./
+ENTRYPOINT java -version
+# /usr/lib/jvm/java-1.8.0
 
 EXPOSE 22

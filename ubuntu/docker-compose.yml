@@ -1,0 +1,6 @@
+version: '3'
+services:
+  web:
+    image: ubuntu:7.2
+    build: .
+    restart: always

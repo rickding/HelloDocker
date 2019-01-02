@@ -105,3 +105,6 @@ https://blog.csdn.net/qq_29695701/article/details/77454395
 # VPN
 https://yq.aliyun.com/articles/625340
 https://github.com/getlantern/forum
+
+# scp
+scp root@172.19.2.75:/tmp/aa.rpm /tmp/

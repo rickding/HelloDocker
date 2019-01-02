@@ -1,6 +1,6 @@
 FROM ubuntu:18.04
 
-# CMD grep -v '^#' /etc/apt/sources.list
+# CMD $PWD
 
 ENTRYPOINT grep -v '^#' /etc/apt/sources.list
 

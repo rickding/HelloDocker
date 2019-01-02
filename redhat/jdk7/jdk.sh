@@ -1,14 +1,10 @@
 #!/bin/bash
 
-apt update
-apt -y install software-properties-common
+java -version
 
-# https://www.cnblogs.com/bluestorm/p/5677625.html
+yum repolist all
+yum search java | grep jdk
 
-# oracle openjdk
-add-apt-repository ppa:openjdk-r/ppa
-apt-get update
+yum install java-1.7.0-openjdk*
 
-apt-get install -y openjdk-7-jdk
-
-# /usr/lib/jvm/java-1.7.0-openjdk-amd64
+java-version

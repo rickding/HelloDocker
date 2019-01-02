@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker build -t redhat:7.2_jdk7 .
+docker build -t redhat:7.2.jdk7 .

@@ -1,12 +1,14 @@
 FROM yjjy0921/redhat7.2:latest
+# FROM wjp719/redhat6.5:latest
 
 # install jdk7
-COPY ./jdk.sh /root/jdk
-WORKDIR /root/jdk
+COPY ./jdk.sh /usr/java/jdk.sh
+WORKDIR /usr/java
+
 RUN ./jdk.sh
 
-# copy config to switch jdk7
-COPY ./setDomainEnv.sh /root/Oracle/Middleware/user_projects/domains/base_domain/bin/
-WORKDIR /root/Oracle/Middleware/user_projects/domains/base_domain
+# CMD $PWD
 
-EXPOSE 7001 7002
+ENTRYPOINT java -version
+
+EXPOSE 22

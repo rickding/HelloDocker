@@ -4,7 +4,7 @@
 ./stop.sh
 
 docker run --rm -it --name centos -p 32:22 -d centos:6.10.local \
-  /bin/sh
+  bash
 
 docker port centos
 docker ps

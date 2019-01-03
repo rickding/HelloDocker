@@ -4,7 +4,7 @@
 ./stop.sh
 
 docker run --rm -it --name ubuntu -p 32:22 -d ubuntu:18.04.local \
-  /bin/sh
+  bash
 
 docker port ubuntu
 docker ps

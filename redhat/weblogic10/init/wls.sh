@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # install
-java -jar wls1036_generic.jar -mode=console
+java -jar wls1036_generic.jar
 
 # domain
 cd /home/weblogic/Oracle/Middleware/wlserver_10.3/common/bin
@@ -9,7 +9,7 @@ cd /home/weblogic/Oracle/Middleware/wlserver_10.3/common/bin
 
 # admin
 cd /home/weblogic/Oracle/Middleware/user_projects/domains/base_domain/servers/AdminServer
-cp /etc/init/boot.properties ./
+cp boot.properties ./
 
 # start
 cd /home/weblogic/Oracle/Middleware/user_projects/domains/base_domain

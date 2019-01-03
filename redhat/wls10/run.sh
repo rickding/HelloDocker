@@ -1,6 +1,6 @@
 #!/bin/bash
 
-./build.sh
+# ./build.sh
 ./stop.sh
 
 docker run --rm --name redhat -p 7001:7001 redhat:7.2.wls10.jdk7

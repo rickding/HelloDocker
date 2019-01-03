@@ -3,7 +3,8 @@
 ./build.sh
 ./stop.sh
 
-docker run --rm --name centos -p 32:22 centos:6.10.local
+docker run --rm -it --name centos -p 32:22 -d centos:6.10.local \
+  /bin/sh
 
 docker port centos
 docker ps

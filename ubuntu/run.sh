@@ -3,7 +3,8 @@
 ./build.sh
 ./stop.sh
 
-docker run --rm --name ubuntu -p 32:22 ubuntu:18.04.local
+docker run --rm -it --name ubuntu -p 32:22 -d ubuntu:18.04.local \
+  /bin/sh
 
 docker port ubuntu
 docker ps

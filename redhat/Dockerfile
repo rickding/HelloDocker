@@ -11,9 +11,8 @@ WORKDIR /etc/init
 # update yum & repo
 # RUN ./yum.sh
 
-# CMD $PWD
+# CMD ["./version.sh"]
 
-ENTRYPOINT java -version
-# /usr/lib/jvm/java-1.8.0
+ENTRYPOINT ["./version.sh"]
 
 EXPOSE 22

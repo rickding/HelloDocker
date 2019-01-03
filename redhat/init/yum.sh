@@ -1,9 +1,5 @@
 #!/bin/bash
 
-# 64bit?
-arch
-cat /etc/redhat-release
-
 # check
 yum repolist all
 cd /etc/yum.repos.d/

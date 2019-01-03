@@ -13,8 +13,8 @@ data/
 mysql/data
 redis/data
 weblogic10/webapps
-weblogic11/webapps
 weblogic12/webapps
+*.rpm
 
 # Compiled class file
 *.class

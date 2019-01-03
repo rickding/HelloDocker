@@ -1,6 +1,6 @@
 #!/bin/bash
 
-./build.sh
+# ./build.sh
 ./stop.sh
 
 docker run --rm --name redhat -p 32:22 redhat:7.2.jdk7

@@ -17,7 +17,7 @@ echo "PATH: " $PATH
 # java
 java -version
 
-# /usr/lib/jvm/java-1.8.0
+# /usr/java/jdk1.7.0_80
 echo "JAVA_HOME: " $JAVA_HOME
 
 # yum

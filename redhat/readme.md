@@ -1,9 +1,10 @@
 # redhat
 https://access.redhat.com/containers/
 https://access.redhat.com/containers/?tab=overview#/registry.connect.redhat.com/azul/zulu-jdk-7u191
+https://access.redhat.com/containers/?tab=security#/registry.access.redhat.com/rhel6/rhel/images/6.5-11
 
-docker login registry.connect.redhat.com
-docker pull registry.connect.redhat.com/azul/zulu-jdk-7u191
+docker pull registry.connect.redhat.com/azul/zulu-jdk-7u191:latest
+docker pull registry.access.redhat.com/rhel6/rhel:6.5-11
 
 # https://hub.docker.com/r/yjjy0921/redhat7.2
 docker pull yjjy0921/redhat7.2:latest

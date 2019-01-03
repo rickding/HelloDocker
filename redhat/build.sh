@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker build -t redhat:7.2 .
+docker build -t redhat:6.5.11 .

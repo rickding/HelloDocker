@@ -3,8 +3,8 @@
 ./build.sh
 ./stop.sh
 
-docker run --rm -it --name redhat -p 32:22 -d redhat:7.2 \
-  /bin/sh
+docker run --rm -it --name redhat -d redhat:6.5.11 \
+  bash
 
 docker port redhat
 docker ps

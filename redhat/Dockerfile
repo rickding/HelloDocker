@@ -15,4 +15,4 @@ WORKDIR /etc/init
 
 ENTRYPOINT ["./version.sh"]
 
-EXPOSE 22
+# EXPOSE 22

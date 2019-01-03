@@ -14,4 +14,4 @@ RUN source /etc/profile
 
 ENTRYPOINT ["./version.sh"]
 
-EXPOSE 22
+# EXPOSE 22

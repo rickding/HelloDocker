@@ -3,8 +3,8 @@
 java -version
 
 yum install -y jdk-7u80-linux-x64.rpm
-
 ls -al /usr/java/jdk1.7.0_80
+
 java -version
 
 # set JAVA_HOME

@@ -15,6 +15,7 @@ redis/data
 weblogic10/webapps
 weblogic12/webapps
 *.rpm
+jdk1.7.0_121
 
 # Compiled class file
 *.class

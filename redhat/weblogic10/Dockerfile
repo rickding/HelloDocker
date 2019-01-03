@@ -1,4 +1,5 @@
-FROM redhat:6.5.jdk7
+# FROM redhat:6.5.11.jdk7
+FROM registry.cn-shanghai.aliyuncs.com/hellodock/redhat:6.5.11.jdk7
 
 COPY ./init /etc/init
 WORKDIR /etc/init

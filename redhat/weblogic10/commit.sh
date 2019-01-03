@@ -1,4 +1,4 @@
 #!/bin/bash
 
 # passwd & install weblogic
-docker commit 799cb8964943 redhat:7.2.wls10.jdk7
+docker commit a60f99ecc47b redhat:6.5.wls10.jdk7

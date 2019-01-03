@@ -1,10 +1,7 @@
 #!/bin/bash
 
 # user
-groupadd weblogic
-useradd -g weblogic weblogic
 passwd weblogic
-
 su weblogic
 
 # install
@@ -21,4 +18,4 @@ cp /home/weblogic/boot.properties ./
 
 # start
 cd /home/weblogic/Oracle/Middleware/user_projects/domains/base_domain
-# ./startWeblogic.sh
+# ./startWebLogic.sh

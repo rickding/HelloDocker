@@ -1,4 +1,4 @@
-FROM redhat:7.2.jdk7
+FROM redhat:6.5.jdk7
 
 COPY ./init /etc/init
 WORKDIR /etc/init
@@ -10,8 +10,8 @@ WORKDIR /home/weblogic
 # After install by calling ./wls.sh
 # WORKDIR /home/weblogic/Oracle/Middleware/user_projects/domains/base_domain
 
-# CMD ["./startWeblogic.sh"]
+# CMD ["./startWebLogic.sh"]
 
-# ENTRYPOINT ["./startWeblogic.sh"]
+# ENTRYPOINT ["./startWebLogic.sh"]
 
 EXPOSE 7001

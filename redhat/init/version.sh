@@ -21,8 +21,8 @@ java -version
 echo "JAVA_HOME: " $JAVA_HOME
 
 # yum
-yum repolist all | grep enabled
-cd /etc/yum.repos.d/ && ls -al ./
+# yum repolist all | grep enabled
+# cd /etc/yum.repos.d/ && ls -al ./
 
 # installed yum rpm
-rpm -qa | grep yum
+# rpm -qa | grep yum

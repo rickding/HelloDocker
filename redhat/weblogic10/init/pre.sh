@@ -1,10 +1,5 @@
 #!/bin/bash
 
-# user
-groupadd weblogic
-useradd -g weblogic weblogic
-# passwd weblogic
-
 # java
 java -version
 echo "JAVA_HOME: " $JAVA_HOME

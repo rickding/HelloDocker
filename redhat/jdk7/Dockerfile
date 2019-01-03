@@ -1,5 +1,5 @@
-FROM yjjy0921/redhat7.2:latest
-# FROM wjp719/redhat6.5:latest
+# FROM yjjy0921/redhat7.2:latest
+FROM wjp719/redhat6.5:latest
 
 COPY ./init /etc/init
 COPY ./init/profile /etc/profile

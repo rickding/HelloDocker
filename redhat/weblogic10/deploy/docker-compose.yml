@@ -1,0 +1,13 @@
+version: '3'
+services:
+  web:
+    image: weblogic10
+    build: .
+    restart: always
+    volumes:
+      - ./data/logs:/home/weblogic/idea/logs
+#      - ./config/config.xml:/home/weblogic/Oracle/Middleware/user_projects/domains/base_domain/config/config.xml
+      - ./autodeploy:/home/weblogic/Oracle/Middleware/user_projects/domains/base_domain/autodeploy
+      - ./webapps:/home/weblogic/Oracle/Middleware/user_projects/domains/base_domain/servers/AdminServer/upload
+    ports:
+      - 7002:7001

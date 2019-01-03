@@ -1,4 +1,4 @@
-# weblogic 10.36
+# weblogic 10.36, ubuntu 14.04
 https://blog.csdn.net/archersaber39/article/details/80135463
 https://hub.docker.com/r/zhiqzhao/ubuntu_weblogic1036_domain
 

@@ -1,4 +1,4 @@
-# weblogic
+# weblogic12 ubuntu 18.04
 https://blog.csdn.net/renfengjun/article/details/78581600
 https://github.com/oracle/docker-images/tree/master/OracleWebLogic
 https://blog.csdn.net/magi1201/article/details/46280507

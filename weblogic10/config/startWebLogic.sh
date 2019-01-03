@@ -164,6 +164,15 @@ if [ "${CLASS_CACHE}" = "true" ] ; then
 	classCaching
 fi
 
+# os
+# cat /etc/issue
+lsb_release -a
+# uname -a
+# cat /proc/version
+
+# 64bit?
+arch
+
 # START WEBLOGIC
 
 echo "starting weblogic with Java version:"

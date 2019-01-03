@@ -3,21 +3,30 @@
 ./build.sh
 ./stop.sh
 
-export HostIP="192.168.12.50"
+rm -rf $PWD/etcd-data.tmp && mkdir -p $PWD/etcd-data.tmp && \
+  docker run \
+  --rm -d \
+  -p 2379:2379 \
+  -p 2380:2380 \
+  --mount type=bind,source=$PWD/etcd-data.tmp,destination=/etcd-data \
+  --name etcd \
+  etcd:3.3.10 \
+  /usr/local/bin/etcd \
+  --name s1 \
+  --data-dir /etcd-data \
+  --listen-client-urls http://0.0.0.0:2379 \
+  --advertise-client-urls http://0.0.0.0:2379 \
+  --listen-peer-urls http://0.0.0.0:2380 \
+  --initial-advertise-peer-urls http://0.0.0.0:2380 \
+  --initial-cluster s1=http://0.0.0.0:2380 \
+  --initial-cluster-token tkn \
+  --initial-cluster-state new
 
-docker run -d -v /usr/share/ca-certificates/:/etc/ssl/certs -p 4001:4001 -p 2380:2380 -p 2379:2379 \
- --name etcd quay.io/coreos/etcd:v2.3.8 \
- -name etcd0 \
- -advertise-client-urls http://${HostIP}:2379,http://${HostIP}:4001 \
- -listen-client-urls http://0.0.0.0:2379,http://0.0.0.0:4001 \
- -initial-advertise-peer-urls http://${HostIP}:2380 \
- -listen-peer-urls http://0.0.0.0:2380 \
- -initial-cluster-token etcd-cluster-1 \
- -initial-cluster etcd0=http://${HostIP}:2380 \
- -initial-cluster-state new
-
-etcdctl -C http://192.168.12.50:2379 member list
-etcdctl -C http://192.168.12.50:4001 member list
+docker exec etcd /bin/sh -c "/usr/local/bin/etcd --version"
+docker exec etcd /bin/sh -c "ETCDCTL_API=3 /usr/local/bin/etcdctl version"
+docker exec etcd /bin/sh -c "ETCDCTL_API=3 /usr/local/bin/etcdctl endpoint health"
+docker exec etcd /bin/sh -c "ETCDCTL_API=3 /usr/local/bin/etcdctl put foo bar"
+docker exec etcd /bin/sh -c "ETCDCTL_API=3 /usr/local/bin/etcdctl get foo"
 
 docker port etcd
 docker ps

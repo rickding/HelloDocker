@@ -1,3 +1,4 @@
-FROM quay.io/coreos/etcd:v2.3.8
+# FROM gcr.io/etcd-development/etcd:v3.3.10
+FROM quay.io/coreos/etcd:v3.3.10
 
-EXPOSE 4001 2380 2379
+EXPOSE 2380 2379

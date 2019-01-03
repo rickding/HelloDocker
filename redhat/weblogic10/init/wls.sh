@@ -19,5 +19,5 @@ cd /home/weblogic/Oracle/Middleware/user_projects/domains/base_domain/servers/Ad
 cp /home/weblogic/boot.properties ./
 
 # start
-cd /home/weblogic/Oracle/Middleware/user_projects/domains/base_domain/bin
+cd /home/weblogic/Oracle/Middleware/user_projects/domains/base_domain
 # ./startWeblogic.sh

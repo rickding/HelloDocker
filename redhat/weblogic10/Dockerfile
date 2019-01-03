@@ -5,7 +5,7 @@ COPY ./init /etc/init
 WORKDIR /etc/init
 RUN ./pre.sh
 
-WORKDIR /home/weblogic
+# WORKDIR /home/weblogic
 # RUN ./wls.sh
 
 # After install by calling ./wls.sh

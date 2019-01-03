@@ -5,4 +5,6 @@ WORKDIR /home/weblogic/Oracle/Middleware/user_projects/domains/base_domain
 
 CMD ["./startWebLogic.sh"]
 
+# ENTRYPOINT ["./startWebLogic.sh"]
+
 EXPOSE 7001

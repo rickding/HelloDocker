@@ -1,10 +1,5 @@
 #!/bin/bash
 
-# check
-yum repolist all
-cd /etc/yum.repos.d/
-ls -al ./
-
 # uninstall
 rpm -qa | grep yum
 rpm -qa | grep yum | xargs rpm -e --nodeps

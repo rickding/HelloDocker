@@ -14,5 +14,4 @@ PATH=$PATH:/usr/java/jdk1.7.0_80/bin
 CLASSPATH=.:/usr/java/jdk1.7.0_80/jre/lib/dt.jar
 
 export JAVA_HOME PATH CLASSPATH
-
 echo "JAVA_HOME: " $JAVA_HOME

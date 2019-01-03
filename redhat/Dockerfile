@@ -11,8 +11,8 @@ WORKDIR /etc/init
 # update yum & repo
 # RUN ./yum.sh
 
-# CMD ["./version.sh"]
+CMD ["./version.sh"]
 
-ENTRYPOINT ["./version.sh"]
+# ENTRYPOINT ["./version.sh"]
 
 # EXPOSE 22

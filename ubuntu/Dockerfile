@@ -1,7 +1,10 @@
 FROM ubuntu:18.04
 
-# CMD $PWD
+COPY ./init /etc/init
+WORKDIR /etc/init
 
-ENTRYPOINT grep -v '^#' /etc/apt/sources.list
+# CMD ["./version.sh"]
+
+ENTRYPOINT ["./version.sh"]
 
 EXPOSE 22

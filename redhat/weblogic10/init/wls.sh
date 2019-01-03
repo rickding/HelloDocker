@@ -8,6 +8,7 @@ passwd weblogic
 su weblogic
 
 # install
+cd /home/weblogic
 java -jar wls1036_generic.jar
 
 # domain

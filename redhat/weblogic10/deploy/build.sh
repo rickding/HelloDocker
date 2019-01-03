@@ -15,15 +15,15 @@
 # cp ../../HelloJava/HelloEar/ear.ear ./webapps
 
 # ams
-cd ../../../../nx/ams/
-./package.sh
-cd ../../HelloDocker/redhat/weblogic10/deploy
-cp ../../../../nx/ams-web/target/ams.war ./webapps
+# cd ../../../../nx/ams/
+# ./package.sh
+# cd ../../HelloDocker/redhat/weblogic10/deploy
+# cp ../../../../nx/ams-web/target/ams.war ./webapps
 
 # rm ./webapps/ams -rf
 # mv ../../nx/ams-web/target/ams ./webapps
 
 chmod a+w -R ../
-chmod a+w -R ../../../nx
+chmod a+w -R ../../../../nx
 
 docker-compose build

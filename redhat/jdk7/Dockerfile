@@ -1,5 +1,7 @@
 # FROM yjjy0921/redhat7.2:latest
-FROM wjp719/redhat6.5:latest
+# FROM wjp719/redhat6.5:latest
+# FROM redhat:6.5.11
+FROM registry.cn-shanghai.aliyuncs.com/hellodock/redhat:6.5.11
 
 COPY ./init /etc/init
 COPY ./init/profile /etc/profile

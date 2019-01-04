@@ -108,3 +108,8 @@ https://github.com/getlantern/forum
 
 # scp
 scp root@172.19.2.75:/tmp/aa.rpm /tmp/
+
+scp ./jdk1.7.0_121.tar.gz root@192.168.1.222:/root
+scp ./wls1036_generic.jar root@192.168.1.222:/root
+
+scp root@192.168.1.222:/home/weblogic/Oracle/Middleware/user_projects/domains/base_domain/log.txt ./

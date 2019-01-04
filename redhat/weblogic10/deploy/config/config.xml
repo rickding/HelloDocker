@@ -1,40 +1,47 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<domain xsi:schemaLocation="http://xmlns.oracle.com/weblogic/security/wls http://xmlns.oracle.com/weblogic/security/wls/1.0/wls.xsd http://xmlns.oracle.com/weblogic/domain http://xmlns.oracle.com/weblogic/1.0/domain.xsd http://xmlns.oracle.com/weblogic/security http://xmlns.oracle.com/weblogic/1.0/security.xsd http://xmlns.oracle.com/weblogic/security/xacml http://xmlns.oracle.com/weblogic/security/xacml/1.0/xacml.xsd" xmlns="http://xmlns.oracle.com/weblogic/domain" xmlns:sec="http://xmlns.oracle.com/weblogic/security" xmlns:wls="http://xmlns.oracle.com/weblogic/security/wls" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<?xml version='1.0' encoding='UTF-8'?>
+<domain xmlns="http://xmlns.oracle.com/weblogic/domain" xmlns:sec="http://xmlns.oracle.com/weblogic/security" xmlns:wls="http://xmlns.oracle.com/weblogic/security/wls" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.oracle.com/weblogic/security/xacml http://xmlns.oracle.com/weblogic/security/xacml/1.0/xacml.xsd http://xmlns.oracle.com/weblogic/security/providers/passwordvalidator http://xmlns.oracle.com/weblogic/security/providers/passwordvalidator/1.0/passwordvalidator.xsd http://xmlns.oracle.com/weblogic/domain http://xmlns.oracle.com/weblogic/1.0/domain.xsd http://xmlns.oracle.com/weblogic/security http://xmlns.oracle.com/weblogic/1.0/security.xsd http://xmlns.oracle.com/weblogic/security/wls http://xmlns.oracle.com/weblogic/security/wls/1.0/wls.xsd">
   <name>base_domain</name>
   <domain-version>10.3.6.0</domain-version>
-  <security-configuration xmlns:xacml="http://xmlns.oracle.com/weblogic/security/xacml" xmlns:pas="http://xmlns.oracle.com/weblogic/security/providers/passwordvalidator">
+  <security-configuration>
     <name>base_domain</name>
     <realm>
-      <sec:authentication-provider xsi:type="wls:default-authenticatorType"/>
+      <sec:authentication-provider xsi:type="wls:default-authenticatorType"></sec:authentication-provider>
       <sec:authentication-provider xsi:type="wls:default-identity-asserterType">
         <sec:active-type>AuthenticatedUser</sec:active-type>
       </sec:authentication-provider>
-      <sec:role-mapper xsi:type="xacml:xacml-role-mapperType"/>
-      <sec:authorizer xsi:type="xacml:xacml-authorizerType"/>
-      <sec:adjudicator xsi:type="wls:default-adjudicatorType"/>
-      <sec:credential-mapper xsi:type="wls:default-credential-mapperType"/>
-      <sec:cert-path-provider xsi:type="wls:web-logic-cert-path-providerType"/>
+      <sec:role-mapper xmlns:xac="http://xmlns.oracle.com/weblogic/security/xacml" xsi:type="xac:xacml-role-mapperType"></sec:role-mapper>
+      <sec:authorizer xmlns:xac="http://xmlns.oracle.com/weblogic/security/xacml" xsi:type="xac:xacml-authorizerType"></sec:authorizer>
+      <sec:adjudicator xsi:type="wls:default-adjudicatorType"></sec:adjudicator>
+      <sec:credential-mapper xsi:type="wls:default-credential-mapperType"></sec:credential-mapper>
+      <sec:cert-path-provider xsi:type="wls:web-logic-cert-path-providerType"></sec:cert-path-provider>
       <sec:cert-path-builder>WebLogicCertPathProvider</sec:cert-path-builder>
       <sec:name>myrealm</sec:name>
-      <sec:password-validator xsi:type="pas:system-password-validatorType">
+      <sec:password-validator xmlns:pas="http://xmlns.oracle.com/weblogic/security/providers/passwordvalidator" xsi:type="pas:system-password-validatorType">
         <sec:name>SystemPasswordValidator</sec:name>
         <pas:min-password-length>8</pas:min-password-length>
         <pas:min-numeric-or-special-characters>1</pas:min-numeric-or-special-characters>
       </sec:password-validator>
     </realm>
     <default-realm>myrealm</default-realm>
-    <credential-encrypted>{AES}jSjRs+btQU2nQm7KYgb3/w4kOEH06FJXiZzzPnSZOAr3Iqjw7eH+E3kCCwmT3BTSx5bmTXiI5MTV2FYRGLC/2w3kMJM8lq7RPBpmuI2uBHT+gLtIsHAiruohV8gdwDfs</credential-encrypted>
+    <credential-encrypted>{AES}8wCzuW1m8U0KYsFoyNrFne0IZ4OA710mR/Ed2KE928O1TqMIc12zzq/m2iWO/MaHGNhO2XzPS6rwhr9AhlL6YTx9wdD998YXIu9qSZPQQOJsHgroaF72vO7V+NrMpmGm</credential-encrypted>
     <node-manager-username>webadmin</node-manager-username>
-    <node-manager-password-encrypted>{AES}kiNcxzHQthMwufRv0FXAgOVQD97rFEyK2sjGcwt+p/Y=</node-manager-password-encrypted>
+    <node-manager-password-encrypted>{AES}btXBrP9vkOf+MF0MyEDaEwdQuynEeX7lnQ9OdjeRbpw=</node-manager-password-encrypted>
   </security-configuration>
   <server>
     <name>AdminServer</name>
-    <listen-address/>
+    <listen-address></listen-address>
   </server>
   <embedded-ldap>
     <name>base_domain</name>
-    <credential-encrypted>{AES}fGSVhonFeIg2+dAz86rAXYjWtQXBbANGXnJuWpwpb87deQ2tIpnuQLqZc/4OgWpP</credential-encrypted>
+    <credential-encrypted>{AES}JUfOl3UnRpO1ue1oyF6uCBMJVrPjHxSDDxayNehb43FtwfJj4HMV15eOgRlCs7HL</credential-encrypted>
   </embedded-ldap>
   <configuration-version>10.3.6.0</configuration-version>
+  <app-deployment>
+    <name>web_war-0#0.0.1-SNAPSHOT</name>
+    <target>AdminServer</target>
+    <module-type>war</module-type>
+    <source-path>servers/AdminServer/upload/web_war-0.0.1-SNAPSHOT.war</source-path>
+    <security-dd-model>DDOnly</security-dd-model>
+  </app-deployment>
   <admin-server-name>AdminServer</admin-server-name>
 </domain>

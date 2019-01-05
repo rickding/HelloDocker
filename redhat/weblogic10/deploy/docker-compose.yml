@@ -10,4 +10,4 @@ services:
       - ./autodeploy:/home/weblogic/Oracle/Middleware/user_projects/domains/base_domain/autodeploy
       - ./webapps:/home/weblogic/Oracle/Middleware/user_projects/domains/base_domain/servers/AdminServer/upload
     ports:
-      - 7002:7001
+      - 7001:7001

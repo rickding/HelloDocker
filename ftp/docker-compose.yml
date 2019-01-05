@@ -21,6 +21,5 @@ services:
         image: ftp_client:latest
         command: "java -jar ftp-1.0-SNAPSHOT.jar"
         build: .
-        restart: always
         depends_on:
             - ftp

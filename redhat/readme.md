@@ -15,3 +15,23 @@ docker pull registry.cn-shanghai.aliyuncs.com/hellodock/redhat:7.2
 
 # yum & repo
 https://www.cnblogs.com/syqlp/p/6555524.html
+
+# redhat in virtualbox
+https://www.jianshu.com/p/91f9bc2b3c0d
+
+vim /etc/sysconfig/network-scripts/ifcfg-xxx
+
+BOOTPROTO=static
+IPADDR=192.168.1.222
+NETMASK=255.255.255.0
+GATEWAY=192.168.1.1
+
+ONBOOT=yes
+DNS1=192.168.1.1
+DNS2=192.168.1.1
+
+ifconfig
+service network restart
+
+# no route to host
+iptables -F

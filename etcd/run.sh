@@ -3,12 +3,14 @@
 ./build.sh
 ./stop.sh
 
-rm -rf $PWD/etcd-data.tmp && mkdir -p $PWD/etcd-data.tmp && \
+# docker run --rm -it --name etcd etcd:3.3.10 sh
+
+rm -rf $PWD/data && mkdir -p $PWD/data && \
   docker run \
   --rm -d \
   -p 2379:2379 \
   -p 2380:2380 \
-  --mount type=bind,source=$PWD/etcd-data.tmp,destination=/etcd-data \
+  --mount type=bind,source=$PWD/data,destination=/etcd-data \
   --name etcd \
   etcd:3.3.10 \
   /usr/local/bin/etcd \

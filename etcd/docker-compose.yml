@@ -5,11 +5,5 @@ services:
         restart: always
         ports:
             - "2379-2380:2379-2380"
-        volumes:
-            - ./files:/home/vsftpd
-        environment:
-            - FTP_USER=test
-            - FTP_PASS=test
-            - PASV_ADDRESS=192.168.1.157
-            - PASV_MIN_PORT=21100
-            - PASV_MAX_PORT=21110
+#        volumes:
+#            - ./data:/etcd-data

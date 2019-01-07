@@ -15,10 +15,10 @@
 # cp ../../HelloJava/HelloEar/ear.ear ./webapps
 
 # ams
-# cd ../../../../nx/ams/
-# ./package.sh
-# cd ../../HelloDocker/redhat/weblogic10/deploy
-# cp ../../../../nx/ams-web/target/ams.war ./webapps
+cd ../../../../nx/ams/
+./package.sh
+cd ../../HelloDocker/redhat/weblogic10/deploy
+cp ../../../../nx/ams-web/target/ams.war ./webapps
 
 # rm ./webapps/ams -rf
 # mv ../../nx/ams-web/target/ams ./webapps

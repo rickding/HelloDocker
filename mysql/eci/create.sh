@@ -13,11 +13,18 @@ aliyun eci CreateContainerGroup \
   --Container.1.Name mysql5 \
   --Container.1.Image registry-vpc.cn-shanghai.aliyuncs.com/hellodock/mysql:5 \
   --Container.1.ImagePullPolicy IfNotPresent \
-  --Container.1.Cpu 4 \
-  --Container.1.Memory 16 \
+  --Container.1.Cpu 2 \
+  --Container.1.Memory 8 \
   --Container.1.Port.1.Protocol TCP \
   --Container.1.Port.1.Port 3306 \
   --Container.1.EnvironmentVar.1.Key MYSQL_DATABASE \
   --Container.1.EnvironmentVar.1.Value test \
   --Container.1.EnvironmentVar.2.Key MYSQL_ROOT_PASSWORD \
   --Container.1.EnvironmentVar.2.Value root \
+  --Container.2.Name admin \
+  --Container.2.Image registry-vpc.cn-shanghai.aliyuncs.com/hellodock/mysql:admin \
+  --Container.2.ImagePullPolicy IfNotPresent \
+  --Container.2.Cpu 2 \
+  --Container.2.Memory 8 \
+  --Container.2.Port.1.Protocol TCP \
+  --Container.2.Port.1.Port 8080 \

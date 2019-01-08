@@ -2,4 +2,4 @@
 
 aliyun eci DescribeContainerGroups \
   --RegionId cn-shanghai \
-  | grep --color -i -e weblogic10 -e ContainerGroupId -e ip
+  | grep --color -i -e weblogic -e ContainerGroupId -e ip

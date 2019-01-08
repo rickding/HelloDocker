@@ -2,4 +2,4 @@
 
 aliyun eci DescribeContainerGroups \
   --RegionId cn-shanghai \
-  | grep --color -i -e mysql5 -e ContainerGroupId -e ip
+  | grep --color -i -e mysql -e ContainerGroupId -e ip

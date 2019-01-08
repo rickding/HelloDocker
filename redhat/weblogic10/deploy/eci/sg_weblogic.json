@@ -1,0 +1,15 @@
+[{
+	"SourceCidrIp": "0.0.0.0/0",
+	"PortRange": "7001/7001",
+	"Direction": "ingress",
+	"IpProtocol": "TCP",
+	"Policy": "Accept"
+}, {
+	"PortRange": "7001/7001",
+	"Direction": "ingress",
+	"IpProtocol": "TCP",
+	"Policy": "Accept",
+	"NicType": "intranet",
+	"SourceGroupId": "sg-uf69eozm2wgaltxtx44e",
+	"SourceGroupName": "nginx"
+}]

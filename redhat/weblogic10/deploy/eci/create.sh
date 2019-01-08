@@ -4,7 +4,7 @@
 # aliyun help eci CreateContainerGroup
 
 aliyun eci CreateContainerGroup \
-  --ContainerGroupName weblogic10 \
+  --ContainerGroupName weblogic \
   --RegionId cn-shanghai \
   --ZoneId cn-shanghai-a \
   --SecurityGroupId sg-uf6f775x5cf6xgzl2zod \

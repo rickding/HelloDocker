@@ -1,0 +1,17 @@
+[{
+	"PortRange": "3306/3306",
+	"Direction": "ingress",
+	"IpProtocol": "TCP",
+	"Policy": "Accept",
+	"NicType": "intranet",
+	"SourceGroupId": "sg-uf6f775x5cf6xgzl2zod",
+	"SourceGroupName": "weblogic"
+}, {
+	"PortRange": "3306/3306",
+	"Direction": "ingress",
+	"IpProtocol": "TCP",
+	"Policy": "Accept",
+	"NicType": "intranet",
+	"SourceGroupId": "sg-uf60ng4pfttd9glnod58",
+	"SourceGroupName": "jira"
+}]

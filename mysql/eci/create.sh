@@ -25,6 +25,6 @@ aliyun eci CreateContainerGroup \
   --Container.2.Image registry-vpc.cn-shanghai.aliyuncs.com/hellodock/mysql:admin \
   --Container.2.ImagePullPolicy IfNotPresent \
   --Container.2.Cpu 0.5 \
-  --Container.2.Memory 2 \
+  --Container.2.Memory 1 \
   --Container.2.Port.1.Protocol TCP \
   --Container.2.Port.1.Port 8080 \

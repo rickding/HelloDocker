@@ -1,4 +1,18 @@
 [{
+	"SourceCidrIp": "0.0.0.0/0",
+	"PortRange": "8080/8080",
+	"Direction": "ingress",
+	"IpProtocol": "TCP",
+	"Policy": "Accept"
+}, {
+	"PortRange": "8080/8080",
+	"Direction": "ingress",
+	"IpProtocol": "TCP",
+	"Policy": "Accept",
+	"NicType": "intranet",
+	"SourceGroupId": "sg-uf69eozm2wgaltxtx44e",
+	"SourceGroupName": "nginx"
+}, {
 	"PortRange": "3306/3306",
 	"Direction": "ingress",
 	"IpProtocol": "TCP",
@@ -15,17 +29,11 @@
 	"SourceGroupId": "sg-uf60ng4pfttd9glnod58",
 	"SourceGroupName": "jira"
 }, {
-	"SourceCidrIp": "0.0.0.0/0",
-	"PortRange": "8080/8080",
-	"Direction": "ingress",
-	"IpProtocol": "TCP",
-	"Policy": "Accept"
-}, {
-	"PortRange": "8080/8080",
+	"PortRange": "3306/3306",
 	"Direction": "ingress",
 	"IpProtocol": "TCP",
 	"Policy": "Accept",
 	"NicType": "intranet",
-	"SourceGroupId": "sg-uf69eozm2wgaltxtx44e",
-	"SourceGroupName": "nginx"
+	"SourceGroupId": "sg-uf69eozm2wga1jwe8sgr",
+	"SourceGroupName": "ddsrv-api"
 }]

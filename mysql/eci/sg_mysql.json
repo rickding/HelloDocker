@@ -1,17 +1,11 @@
 [{
-	"SourceCidrIp": "0.0.0.0/0",
-	"PortRange": "8080/8080",
-	"Direction": "ingress",
-	"IpProtocol": "TCP",
-	"Policy": "Accept"
-}, {
-	"PortRange": "8080/8080",
+	"PortRange": "3306/3306",
 	"Direction": "ingress",
 	"IpProtocol": "TCP",
 	"Policy": "Accept",
 	"NicType": "intranet",
-	"SourceGroupId": "sg-uf69eozm2wgaltxtx44e",
-	"SourceGroupName": "nginx"
+	"SourceGroupId": "sg-uf6gg87ra0fuxsxeonre",
+	"SourceGroupName": "dba"
 }, {
 	"PortRange": "3306/3306",
 	"Direction": "ingress",

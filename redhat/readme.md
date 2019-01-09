@@ -33,5 +33,9 @@ DNS2=192.168.1.1
 ifconfig
 service network restart
 
+# hostname unknown
+vim /etc/hosts
+add hostname, e.g. redhat
+
 # no route to host
 iptables -F

@@ -77,12 +77,8 @@ done
 unset i
 unset -f pathmunge
 
-# JAVA_HOME=/usr/java/jdk1.7.0_80
-# PATH=$PATH:/usr/java/jdk1.7.0_80/bin
-# CLASSPATH=.:/usr/java/jdk1.7.0_80/jre/lib/dt.jar
-
-JAVA_HOME=/usr/java/jdk1.7.0_121
-PATH=$PATH:/usr/java/jdk1.7.0_121/bin
-CLASSPATH=.:/usr/java/jdk1.7.0_121/jre/lib/dt.jar
+JAVA_HOME=/usr/java/jdk1.7.0_80
+PATH=$PATH:/usr/java/jdk1.7.0_80/bin
+CLASSPATH=.:/usr/java/jdk1.7.0_80/jre/lib/dt.jar
 
 export JAVA_HOME PATH CLASSPATH

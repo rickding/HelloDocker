@@ -7,8 +7,8 @@ COPY ./init /etc/init
 COPY ./init/profile /etc/profile
 WORKDIR /etc/init
 
-# RUN ./jdk1.7.0_80.sh
-RUN ./jdk1.7.0_121.sh
+RUN ./jdk1.7.0_80.sh
+# RUN ./jdk1.7.0_121.sh
 
 CMD ["./version.sh"]
 

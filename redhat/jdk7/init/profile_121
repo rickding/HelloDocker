@@ -35,14 +35,16 @@ fi
 
 # Path manipulation
 if [ "$EUID" = "0" ]; then
+    pathmunge /sbin
     pathmunge /usr/sbin
     pathmunge /usr/local/sbin
 else
     pathmunge /usr/local/sbin after
     pathmunge /usr/sbin after
+    pathmunge /sbin after
 fi
 
-HOSTNAME=`/usr/bin/hostname 2>/dev/null`
+HOSTNAME=`/bin/hostname 2>/dev/null`
 HISTSIZE=1000
 if [ "$HISTCONTROL" = "ignorespace" ] ; then
     export HISTCONTROL=ignoreboth
@@ -67,7 +69,7 @@ for i in /etc/profile.d/*.sh ; do
         if [ "${-#*i}" != "$-" ]; then
             . "$i"
         else
-            . "$i" >/dev/null
+            . "$i" >/dev/null 2>&1
         fi
     fi
 done
@@ -75,8 +77,8 @@ done
 unset i
 unset -f pathmunge
 
-JAVA_HOME=/usr/java/jdk1.7.0_80
-PATH=$PATH:/usr/java/jdk1.7.0_80/bin
-CLASSPATH=.:/usr/java/jdk1.7.0_80/jre/lib/dt.jar
+JAVA_HOME=/usr/java/jdk1.7.0_121
+PATH=$PATH:/usr/java/jdk1.7.0_121/bin
+CLASSPATH=.:/usr/java/jdk1.7.0_121/jre/lib/dt.jar
 
 export JAVA_HOME PATH CLASSPATH

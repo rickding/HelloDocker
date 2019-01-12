@@ -4,6 +4,9 @@
 passwd weblogic
 su weblogic
 
+$JAVA_HOME
+source /etc/profile
+
 # install
 cd /home/weblogic
 java -jar wls1036_generic.jar

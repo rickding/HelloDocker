@@ -5,6 +5,7 @@
 
 # img:tag repo:tag namespace server
 set redhat:6.5.11.wls10.jdk7 redhat:6.5.11.wls10.jdk7 hellodock registry.cn-shanghai.aliyuncs.com
+# set redhat:6.5.11.wls10.jdk7 redhat:6.5.11.wls10.jdk7.root hellodock registry.cn-shanghai.aliyuncs.com
 
 # workaround on windows: prefix command with winpty
 # docker login --username=xxx $4

@@ -1,12 +1,11 @@
 version: '3'
 services:
   jira:
-    image: "jira:7.12.3"
+    image: "jira:7.12.3.local"
     build: .
     hostname: jira
     ports:
       - "8080:8080"
-      - "8081:8005"
     networks:
       - jira
 

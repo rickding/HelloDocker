@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker commit container_id jira:7.12.3
+docker commit cccbc75f3645 jira:7.12.3

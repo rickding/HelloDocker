@@ -1,5 +1,4 @@
 #!/bin/bash
-clear
 
 docker stop mysql-client
 docker rm mysql-client

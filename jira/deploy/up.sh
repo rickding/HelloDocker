@@ -7,5 +7,5 @@
 docker-compose up -d
 docker-compose ps
 
-# alias dcmp=docker-compose && dcmp logs -f
-# docker exec -it jira_jira-software_1 bash
+# docker-compose logs -f
+# docker exec -it jira_jira_1 bash

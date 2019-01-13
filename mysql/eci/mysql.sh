@@ -10,7 +10,7 @@ aliyun eci CreateContainerGroup \
   --SecurityGroupId sg-uf68tmr3yb0o23x94b74 \
   --VSwitchId vsw-uf69vfkf55j079f22k0zr \
   --RestartPolicy Always \
-  --Container.1.Name mysql5 \
+  --Container.1.Name mysql \
   --Container.1.Image registry-vpc.cn-shanghai.aliyuncs.com/hellodock/mysql:5 \
   --Container.1.ImagePullPolicy IfNotPresent \
   --Container.1.Cpu 2 \

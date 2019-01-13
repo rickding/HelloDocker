@@ -17,7 +17,7 @@ docker exec jira_jira-software_1 sh -c 'service jira stop;mv /opt/atlassian/jira
 chown -R 999 ./data/mysql
 chown -R 1000 ./data/jira
 
-docker exec -it jira_jira_1 bash
+docker exec -it jira_jira-software_1 bash
 cat /etc/group  # 1000
 
 chown -R jira:jira /var/atlassian/application-data

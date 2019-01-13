@@ -1,49 +1,15 @@
 version: '3'
 services:
-  jira_mysql:
-    image: "idoall/mysql:5.7"
-    hostname: jira_mysql
-    ports:
-      - "20032:3306"
-    volumes:
-      - ./data/mysql:/var/lib/mysql
-      - ./conf/my.ini:/etc/mysql/my.cnf
-    networks:
-      - jira
-    environment:
-      - MYSQL_ROOT_PASSWORD=123456
-      - MYSQL_DATABASE=jira
-      - MYSQL_USER=jira
-      - MYSQL_PASSWORD=jira_mshk
-      - character-set-server=utf8
-      - collation-server=utf8_bin
-    deploy:
-      replicas: 1
-      update_config:
-        delay: 1s
-      restart_policy:
-        condition: on-failure
-
-  jira-software:
+  jira:
     image: "jira:7.12.3"
     build: .
     hostname: jira
-    volumes:
-      - ./data/jira:/var/atlassian/application-data
     ports:
-      - "20030:8080"
-      - "20031:8005"
+      - "8080:8080"
+      - "8081:8005"
     networks:
       - jira
-    depends_on:
-      - jira_mysql
-    deploy:
-      replicas: 1
-      update_config:
-        delay: 1s
-      restart_policy:
-        condition: on-failure
 
 networks:
   jira:
-    driver: overlay
+    driver: bridge

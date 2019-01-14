@@ -19,6 +19,9 @@ cd /home/weblogic/Oracle/Middleware/wlserver_10.3/common/bin
 cd /home/weblogic/Oracle/Middleware/user_projects/domains/base_domain/servers/AdminServer
 cp /home/weblogic/boot.properties ./
 
+cd /home/weblogic/Oracle/Middleware/user_projects/domains/base_domain/security
+cp /home/weblogic/boot.properties ./
+
 # start
 cd /home/weblogic/Oracle/Middleware/user_projects/domains/base_domain
 # ./startWebLogic.sh

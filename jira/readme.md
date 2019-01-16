@@ -23,9 +23,7 @@ cat /etc/group  # 1000
 chown -R jira:jira /var/atlassian/application-data
 
 # image
-idoall/mysql:5.7
 idoall/ubuntu16.04-jira-software:7.12.3
-
 cptactionhank/atlassian-jira-software:7.12.3
 
 # license

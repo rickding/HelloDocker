@@ -1,0 +1,8 @@
+version: '3'
+services:
+    prometheus:
+        image: "prometheus:latest"
+        build: .
+        restart: always
+        ports:
+            - 9090:9090

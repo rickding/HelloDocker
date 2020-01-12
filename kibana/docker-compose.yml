@@ -1,0 +1,8 @@
+version: '3'
+services:
+    kibana:
+        image: "kibana_starter:latest"
+        build: .
+        restart: always
+        ports:
+            - 5601:5601

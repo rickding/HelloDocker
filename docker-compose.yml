@@ -1,6 +1,6 @@
 version: '3'
 services:
-    task:
+    hello_docker:
         image: hello_docker
         build: .
         restart: always

@@ -1,6 +1,6 @@
 # Version 1.0
 
-FROM python:3
+FROM python:3.6
 
 # copy files
 COPY ./python/ /tcdata/
@@ -12,4 +12,4 @@ WORKDIR /tcdata/
 RUN ./pip_install.sh
 
 # launch service
-CMD ["python", "hello.py"]
+CMD ["sh", "run.sh"]

@@ -12,4 +12,4 @@ WORKDIR /tcdata/
 RUN ./pip_install.sh
 
 # launch service
-CMD ["sh", "run.sh"]
+CMD ["/bin/bash"]

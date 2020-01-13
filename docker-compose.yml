@@ -1,0 +1,6 @@
+version: '3'
+services:
+    task:
+        image: hello_docker
+        build: .
+        restart: always

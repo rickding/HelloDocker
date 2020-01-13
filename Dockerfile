@@ -5,6 +5,7 @@ FROM python:3
 # copy files
 COPY ./python/ /tcdata/
 COPY ./run.sh /tcdata/
+
 WORKDIR /tcdata/
 
 # install

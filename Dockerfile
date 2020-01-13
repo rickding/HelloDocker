@@ -1,3 +1,5 @@
+# Version 1.0
+
 FROM python:3
 
 # copy files

@@ -1,9 +1,8 @@
 import csv
+import json
 import logging
 
 import numpy as np
-from file_util import save
-from json_util import to_json
 
 log = logging.getLogger(__name__)
 
@@ -40,5 +39,5 @@ result = {
 log.info(result)
 
 # save file
-msg = to_json(result)
-save('./', 'result.json', msg.encode('utf-8'))
+with open("result.json", "w") as f:
+    json.dump(result, f)

@@ -8,7 +8,7 @@ COPY ./run.sh /
 
 WORKDIR /
 
-# install
+# install requirements
 RUN ./pip_install.sh
 
 # launch service

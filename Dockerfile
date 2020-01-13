@@ -3,13 +3,13 @@
 FROM python:3.6
 
 # copy files
-COPY ./python/ /tcdata/
-COPY ./run.sh /tcdata/
+COPY ./python/ /
+COPY ./run.sh /
 
-WORKDIR /tcdata/
+WORKDIR /
 
 # install
 RUN ./pip_install.sh
 
 # launch service
-CMD ["/bin/bash"]
+CMD ["sh", "run.sh"]

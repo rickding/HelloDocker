@@ -17,20 +17,24 @@ print(msg)
 
 # read csv: /tcdata/num_list.csv
 num_list = []
-with open('./num_list.csv')as f:
+with open('/tcdata/num_list.csv')as f:
     f_csv = csv.reader(f)
     for row in f_csv:
         for col in row:
             num_list.append(int(col))
 
 log.info(num_list)
+num_sum = sum(num_list)
+
+# remove duplicated
+num_list = list(set(num_list))
 
 # sort array
 num_list.sort(reverse=True)
 
 result = {
     "Q1": "Hello world",
-    "Q2": sum(num_list),
+    "Q2": num_sum,
     "Q3": num_list[:10]
 }
 log.info(result)

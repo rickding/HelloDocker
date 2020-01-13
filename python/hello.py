@@ -10,13 +10,13 @@ DATEFMT = "[%Y-%m-%d %H:%M:%S]"
 FORMAT = "%(asctime)s %(thread)d %(message)s"
 logging.basicConfig(level=logging.INFO, format=FORMAT, datefmt=DATEFMT)
 
-msg = 'log: Hello World from python app! numpy.dot: %d' % np.dot(2, 3)
+msg = "log: Hello World from python app! numpy.dot: %d" % np.dot(2, 3)
 log.warning(msg)
 print(msg)
 
 # read csv: /tcdata/num_list.csv
 num_list = []
-with open('/tcdata/num_list.csv')as f:
+with open("/tcdata/num_list.csv")as f:
     f_csv = csv.reader(f)
     for row in f_csv:
         for col in row:
@@ -26,7 +26,7 @@ log.info(num_list)
 num_sum = sum(num_list)
 
 # remove duplicated
-num_list = list(set(num_list))
+# num_list = list(set(num_list))
 
 # sort array
 num_list.sort(reverse=True)

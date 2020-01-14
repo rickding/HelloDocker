@@ -11,16 +11,24 @@ FORMAT = "%(asctime)s %(thread)d %(message)s"
 logging.basicConfig(level=logging.INFO, format=FORMAT, datefmt=DATEFMT)
 
 msg = "log: Hello World from python app! numpy.dot: %d" % np.dot(2, 3)
-log.warning(msg)
+log.info(msg)
 print(msg)
 
 # read csv: /tcdata/num_list.csv
+f = None
+try:
+    f = open("/tcdata/num_list.csv")
+except FileNotFoundError as e:
+    log.info(e)
+    f = open("./num_list.csv")
+
 num_list = []
-with open("/tcdata/num_list.csv")as f:
-    f_csv = csv.reader(f)
-    for row in f_csv:
-        for col in row:
-            num_list.append(int(col))
+f_csv = csv.reader(f)
+for row in f_csv:
+    for col in row:
+        num_list.append(int(col))
+
+f.close()
 
 log.info(num_list)
 num_sum = sum(num_list)

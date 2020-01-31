@@ -1,0 +1,9 @@
+version: '3'
+services:
+    kibana:
+        image: "logstash_starter:latest"
+        build: .
+        restart: always
+        ports:
+          - 9600:9600
+          - 9601:9601

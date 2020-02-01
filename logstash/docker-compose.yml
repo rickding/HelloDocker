@@ -1,7 +1,7 @@
 version: '3'
 services:
     logstash:
-        image: logstash:latest
+        image: logstash:7.5.2
         build: .
         restart: always
         ports:

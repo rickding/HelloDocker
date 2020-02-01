@@ -1,7 +1,7 @@
 version: '3'
 services:
     activemq:
-        image: webcenter/activemq
+        image: webcenter/activemq:latest
         restart: always
         ports:
             - 61616:61616

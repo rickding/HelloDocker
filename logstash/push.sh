@@ -4,7 +4,7 @@
 # ./login.sh
 
 # img:tag repo:tag namespace server
-set logstash_starter:latest logstash:latest hellodock registry.cn-shanghai.aliyuncs.com
+set logstash:latest logstash:latest hellodock registry.cn-shanghai.aliyuncs.com
 
 # workaround on windows: prefix command with winpty
 # docker login --username=xxx $4

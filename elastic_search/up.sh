@@ -8,4 +8,4 @@ docker-compose up -d
 docker-compose ps
 
 # alias dcmp=docker-compose && dcmp logs -f
-# docker exec -it elastic_search_elasticsearch_1 bash
+# docker exec -it elastic_search_es_1 bash

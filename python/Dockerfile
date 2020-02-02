@@ -1,11 +1,13 @@
-FROM python:3
+FROM python:3.6
 
 # copy files
-COPY . /root/python/
-WORKDIR /root/python/
+COPY ./ /
+COPY ./run.sh /
 
-# install
+WORKDIR /
+
+# install requirements
 RUN ./pip_install.sh
 
 # launch service
-CMD ["python", "hello.py"]
+CMD ["sh", "run.sh"]

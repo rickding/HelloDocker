@@ -4,7 +4,7 @@
 # ./login.sh
 
 # img:tag repo:tag namespace server
-set prom/prometheus:latest prometheus:latest hellodock registry.cn-shanghai.aliyuncs.com
+set prometheus:latest prometheus:latest hellodock registry.cn-shanghai.aliyuncs.com
 
 # workaround on windows: prefix command with winpty
 # docker login --username=xxx $4

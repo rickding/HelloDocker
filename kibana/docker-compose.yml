@@ -1,7 +1,7 @@
 version: '3'
 services:
     kibana:
-        image: kibana_starter:latest
+        image: kibana_local:latest
         build: .
         restart: always
         ports:

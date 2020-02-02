@@ -4,7 +4,7 @@
 # ./login.sh
 
 # img:tag repo:tag namespace server
-set kibana_starter:latest kibana:latest hellodock registry.cn-shanghai.aliyuncs.com
+set kibana_local:latest kibana:latest hellodock registry.cn-shanghai.aliyuncs.com
 
 # workaround on windows: prefix command with winpty
 # docker login --username=xxx $4

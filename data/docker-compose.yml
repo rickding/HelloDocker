@@ -1,0 +1,40 @@
+version: '3'
+services:
+    db:
+        hostname: db
+        image: mysql:5
+        command: --default-authentication-plugin=mysql_native_password
+        restart: always
+        # volumes:
+        #     - ./data/mysql/data:/var/lib/mysql
+        #     - ./data/mysql/conf:/etc/mysql/conf.d
+        #     - ./data/mysql/initdb:/docker-entrypoint-initdb.d
+        ports:
+            - 3306:3306
+        environment:
+           MYSQL_DATABASE: starter
+           MYSQL_ROOT_PASSWORD: root
+
+    db_admin:
+        image: adminer:latest
+        restart: always
+        ports:
+            - 3006:8080
+        depends_on:
+            - db
+
+    cache:
+        hostname: cache
+        image: redis:4
+        command: redis-server --appendonly yes
+        restart: always
+        ports:
+            - 6379:6379
+
+    mq:
+        hostname: mq
+        image: webcenter/activemq:latest
+        restart: always
+        ports:
+            - 61616:61616
+            - 8161:8161

@@ -9,6 +9,7 @@ services:
             - 9300:9300
 
     log:
+        hostname: log
         image: registry.cn-shanghai.aliyuncs.com/hellodock/logstash:latest
         restart: always
         ports:

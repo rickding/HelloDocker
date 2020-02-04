@@ -1,0 +1,26 @@
+version: '3'
+services:
+    elasticsearch:
+        hostname: elasticsearch
+        image: elasticsearch:latest
+        restart: always
+        ports:
+            - 9200:9200
+            - 9300:9300
+
+    log:
+        image: registry.cn-shanghai.aliyuncs.com/hellodock/logstash:latest
+        restart: always
+        ports:
+            - 9600:9600
+            - 9601:9601
+        depends_on:
+            - elasticsearch
+
+    kibana:
+        image: registry.cn-shanghai.aliyuncs.com/hellodock/kibana:latest
+        restart: always
+        ports:
+            - 5601:5601
+        depends_on:
+            - elasticsearch

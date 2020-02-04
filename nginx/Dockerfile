@@ -1,11 +1,10 @@
-FROM nginx:stable
+FROM nginx:latest
 
 # web files
 COPY ./web/ /usr/share/nginx/html
 
 # config
-COPY ./conf/nginx.conf /etc/nginx/nginx.conf
-COPY ./conf/conf.d /etc/nginx/conf.d
+COPY ./conf/ /etc/nginx/
 
 WORKDIR /etc/nginx
 

@@ -8,4 +8,4 @@ docker-compose up -d
 docker-compose ps
 
 # alias dcmp=docker-compose && dcmp logs -f
-# docker exec -it alert_manager_alertmanager_1 bash
+# docker exec -it alertmanager_alertmanager_1 bash

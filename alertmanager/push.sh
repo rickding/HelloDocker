@@ -4,7 +4,7 @@
 # ./login.sh
 
 # img:tag repo:tag namespace server
-set alert_manager:latest alert_manager:latest hellodock registry.cn-shanghai.aliyuncs.com
+set alertmanager:latest alertmanager:latest hellodock registry.cn-shanghai.aliyuncs.com
 
 # workaround on windows: prefix command with winpty
 # docker login --username=xxx $4

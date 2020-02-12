@@ -1,0 +1,22 @@
+version: '3'
+services:
+    grafana:
+        image: grafana/grafana:latest
+        restart: always
+        ports:
+            - 3000:3000
+
+    alertmanager:
+        hostname: alertmanager
+        image: registry.cn-shanghai.aliyuncs.com/hellodock/alertmanager:latest
+        restart: always
+        ports:
+            - 9093:9093
+
+    prometheus:
+        image: registry.cn-shanghai.aliyuncs.com/hellodock/prometheus:latest
+        restart: always
+        ports:
+            - 9090:9090
+        depends_on:
+            - alertmanager

@@ -3,11 +3,11 @@ clear
 
 ./stop.sh
 
-# docker run --name=alert_manager -p 9090:9090 -v $PWD/prometheus.yml:/etc/prometheus/prometheus.yml -d quay.io/prometheus/alertmanager:latest --config.file=/etc/prometheus/prometheus.yml
-docker run --name=alert_manager -p 9090:9090 -d alert_manager:latest
+# docker run --name=alertmanager -p 9093:9093 -v ./alertmanager.yml:/etc/alertmanager/config.yml -d docker.io/prom/alertmanager:latest
+docker run --name=alertmanager -p 9093:9093 -d alert_manager:latest
 
-docker port alert_manager
+docker port alertmanager
 docker ps
 
-# docker exec -it alert_manager bash -c
-# docker logs alert_manager -f
+# docker exec -it alertmanager bash -c
+# docker logs alertmanager -f

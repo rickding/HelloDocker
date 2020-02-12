@@ -1,8 +1,9 @@
-FROM quay.io/prometheus/alertmanager:latest
+FROM prom/alertmanager:latest
 
 LABEL maintainer="Jext Community, https://github.com/rickding/HelloDocker"
 
 # config
-COPY ./prometheus.yml /etc/prometheus/prometheus.yml
+COPY ./alertmanager.yml /etc/alertmanager/
+COPY ./template /etc/alertmanager/
 
-EXPOSE 9090
+EXPOSE 9093

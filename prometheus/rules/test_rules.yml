@@ -1,0 +1,12 @@
+groups:
+ - name: test-rules
+   rules:
+   - alert: InstanceDown # 告警名称
+     expr: up == 0 # 告警的判定条件，参考Prometheus高级查询来设定
+     for: 2m # 满足告警条件持续时间多久后，才会发送告警
+     labels: #标签项
+       team: node
+     annotations: # 解析项，详细解释告警信息
+       summary: "{{$labels.instance}}: has been down"
+       description: "{{$labels.instance}}: job {{$labels.job}} has been down "
+       value: {{$value}}

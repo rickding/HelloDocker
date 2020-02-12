@@ -1,8 +1,8 @@
 version: '3'
 services:
-    prometheus:
+    alertmanager:
         image: alert_manager:latest
         build: .
         restart: always
         ports:
-            - 9090:9090
+            - 9093:9093

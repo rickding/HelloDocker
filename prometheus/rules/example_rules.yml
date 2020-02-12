@@ -1,0 +1,21 @@
+groups:
+ - name: example-rules
+  interval: 30s # defaults to global interval
+  rules:
+  - alert: Node Down
+    expr: up{job="kubernetes-nodes"} == 0
+    labels:
+      severity: error
+    annotations:
+      miqTarget: "ContainerNode"
+      severity: "HIGH"
+      message: "{{$labels.instance}} is down"
+  - alert: "Too Many Pods"
+    expr: sum(kubelet_running_pod_count) > 50
+    labels:
+      severity: error
+    annotations:
+      miqTarget: "ExtManagementSystem"  
+      severity: "ERROR"
+      url: "https://www.example.com/too_many_pods_fixing_instructions"
+      message: "Too many running pods"

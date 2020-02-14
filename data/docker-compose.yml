@@ -37,4 +37,5 @@ services:
         restart: always
         ports:
             - 61616:61616
+            - 61613:61613
             - 8161:8161

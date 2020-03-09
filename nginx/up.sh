@@ -1,6 +1,7 @@
 #!/bin/bash
 
 ./build.sh
+
 ./down.sh
 
 # compose

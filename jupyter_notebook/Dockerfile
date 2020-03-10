@@ -1,4 +1,4 @@
-FROM jupyter/base-notebook:latest
+FROM jupyter/base-notebook
 
 # Copy conf file: set pwd: nb
 COPY ./env /home/jovyan/.jupyter

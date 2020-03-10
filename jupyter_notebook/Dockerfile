@@ -4,12 +4,14 @@ FROM jupyter/base-notebook
 COPY ./env /home/jovyan/.jupyter
 WORKDIR /home/jovyan/.jupyter
 
-# Install
+# Update system
 USER root
 RUN sh apt_install.sh
 
 # Switch back to jovyan: ARG NB_UID="1000"
 USER $NB_UID
+
+# Install python libraries
 RUN sh pip_install.sh
 
 EXPOSE 8888

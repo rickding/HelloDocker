@@ -1,8 +1,9 @@
 version: "3"
 services:
     nb:
-        image: "nb"
-        build: .
+        image: registry.cn-shanghai.aliyuncs.com/hellodock/jupyter_notebook:latest
+#        image: "nb"
+#        build: .
         working_dir: /home/jovyan/work
         volumes:
             - ./code:/home/jovyan/work

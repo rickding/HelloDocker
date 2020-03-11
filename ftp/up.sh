@@ -2,6 +2,8 @@
 
 ./down.sh
 
+rm -rf files
+
 # compose
 docker-compose up -d
 docker-compose ps

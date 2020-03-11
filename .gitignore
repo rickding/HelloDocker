@@ -12,6 +12,7 @@ nohup.out
 data/
 mysql/data
 redis/data
+ftp/files
 weblogic10/webapps
 weblogic12/webapps
 *.rpm

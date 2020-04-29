@@ -1,2 +1,6 @@
-numpy==1.15.1
+numpy >= 1.15.1
+
+# image manipulation
+Pillow >= 5.1.0
+scikit-image >= 0.14.0
 opencv-python >= 3.4.2.17

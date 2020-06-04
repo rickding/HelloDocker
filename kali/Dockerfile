@@ -1,6 +1,6 @@
 FROM kalilinux/kali-rolling:latest
 
-COPY ./sources.list /etc/apt/
+# COPY ./sources.list /etc/apt/
 
 RUN apt update; \
     apt upgrade; \

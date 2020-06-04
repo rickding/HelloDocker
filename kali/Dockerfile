@@ -1,5 +1,7 @@
 FROM kalilinux/kali-rolling:latest
 
+COPY ./sources.list /etc/apt/
+
 RUN apt update; \
     apt upgrade; \
     apt -y install metasploit-framework; \

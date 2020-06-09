@@ -9,14 +9,13 @@ apt update && apt -y install metasploit-framework
 https://blog.csdn.net/qq_34489091/article/details/80229477
 
 ifconfig
+iwconfig
 
-# airmon-ng check kill
+airmon-ng
 
 airmon-ng start wlan0
 
 airodump-ng wlan0mon
-
-wash -i wlan0mon
 
 reaver -i wlan0mon -b xx:xx -vv
 

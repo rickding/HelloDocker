@@ -4,10 +4,9 @@ FROM kalilinux/kali-rolling:latest
 
 RUN apt update; \
     apt upgrade; \
-    apt -y install metasploit-framework; \
-    apt -y install net-tools; \
+    apt -y install metasploit-framework net-tools; \
     apt -y install aircrack-ng; \
     apt -y install reaver; \
-    apt -y install build-essential libpcap-dev pixiewps \
+    apt -y install build-essential libpcap-dev pixiewps bully \
 
 # EXPOSE 22

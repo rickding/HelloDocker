@@ -6,6 +6,8 @@ RUN apt update; \
     apt upgrade; \
     apt -y install metasploit-framework; \
     apt -y install net-tools; \
-    apt -y install aircrack-ng
+    apt -y install aircrack-ng; \
+    apt -y install reaver; \
+    apt -y install build-essential libpcap-dev pixiewps \
 
 # EXPOSE 22

@@ -1,0 +1,15 @@
+version: '3'
+services:
+    db:
+        image: registry.cn-hangzhou.aliyuncs.com/woqutech/oracle-database-11.2.0.4.0-ee
+        restart: always
+        ports:
+            - 1521:1521
+        environment:
+            ORACLE_SID: oracledb
+            ORACLE_PWD: oracle
+            ORACLE_CHARACTERSET: ZHS16GBK
+            SGA_SIZE: 8G
+            PGA_SIZE: 8G
+            DB_ROLE: primary
+            ENABLE_ARCH: "true"
